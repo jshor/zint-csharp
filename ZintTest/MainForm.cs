@@ -28,5 +28,13 @@ namespace ZintTest
 
             symb.CreateSymbology("datamatrix.png", "12345", 5, 0);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((String)comboBox1.SelectedItem == "Aztec Code (ISO 24778)")
+            {
+
+            }
+        }
     }
 }

@@ -8,9 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace ZintTest
 {
-    class Symbology
+    public class Symbology
     {
         public static zint_symbol SymbolStruct;
+
+        /* getters and setters */
+        #region Symbol
         public int Symbol
         {
             get
@@ -22,6 +25,9 @@ namespace ZintTest
                 SymbolStruct.symbology = value;
             }
         }
+        #endregion
+
+        #region Height
         public int Height
         {
             get
@@ -33,6 +39,9 @@ namespace ZintTest
                 SymbolStruct.height = value;
             }
         }
+        #endregion
+
+        #region WhitespaceWidth
         public int WhitespaceWidth
         {
             get
@@ -44,6 +53,9 @@ namespace ZintTest
                 SymbolStruct.whitespace_width = value;
             }
         }
+        #endregion
+
+        #region BorderWidth
         public int BorderWidth
         {
             get
@@ -55,6 +67,9 @@ namespace ZintTest
                 SymbolStruct.border_width = value;
             }
         }
+        #endregion
+
+        #region OutputOptions
         public int OutputOptions
         {
             get
@@ -66,6 +81,9 @@ namespace ZintTest
                 SymbolStruct.output_options = value;
             }
         }
+        #endregion
+
+        #region Option1
         public int Option1
         {
             get
@@ -77,6 +95,37 @@ namespace ZintTest
                 SymbolStruct.option_1 = value;
             }
         }
+        #endregion
+
+        #region Option2
+        public int Option2
+        {
+            get
+            {
+                return SymbolStruct.option_2;
+            }
+            set
+            {
+                SymbolStruct.option_2 = value;
+            }
+        }
+        #endregion
+
+        #region Option3
+        public int Option3
+        {
+            get
+            {
+                return SymbolStruct.option_3;
+            }
+            set
+            {
+                SymbolStruct.option_3 = value;
+            }
+        }
+        #endregion
+
+        #region ShowHrt
         public int ShowHrt
         {
             get
@@ -88,6 +137,9 @@ namespace ZintTest
                 SymbolStruct.show_hrt = value;
             }
         }
+        #endregion
+
+        #region InputMode
         public int InputMode
         {
             get
@@ -99,6 +151,9 @@ namespace ZintTest
                 SymbolStruct.input_mode = value;
             }
         }
+        #endregion
+
+        #region Rows
         public int Rows
         {
             get
@@ -110,6 +165,9 @@ namespace ZintTest
                 SymbolStruct.rows = value;
             }
         }
+        #endregion
+
+        #region Width
         public int Width
         {
             get
@@ -121,6 +179,9 @@ namespace ZintTest
                 SymbolStruct.width = value;
             }
         }
+        #endregion
+
+        #region ForegroundColor
         public String ForegroundColor
         {
             get
@@ -132,6 +193,9 @@ namespace ZintTest
                 SymbolStruct.fgcolour = value;
             }
         }
+        #endregion
+
+        #region BackgroundColor
         public String BackgroundColor
         {
             get
@@ -143,6 +207,9 @@ namespace ZintTest
                 SymbolStruct.bgcolour = value;
             }
         }
+        #endregion
+
+        #region Outfile
         public String Outfile
         {
             get
@@ -154,6 +221,9 @@ namespace ZintTest
                 SymbolStruct.outfile = value;
             }
         }
+        #endregion
+
+        #region Text
         public String Text
         {
             get
@@ -165,6 +235,9 @@ namespace ZintTest
                 SymbolStruct.text = value;
             }
         }
+        #endregion
+
+        #region Primary
         public String Primary
         {
             get
@@ -176,6 +249,9 @@ namespace ZintTest
                 SymbolStruct.primary = value;
             }
         }
+        #endregion
+
+        #region Scale
         public float Scale
         {
             get
@@ -187,14 +263,10 @@ namespace ZintTest
                 SymbolStruct.scale = value;
             }
         }
+        #endregion
 
-
-
-
-
-
-
-
+        /* read-only getters */
+        #region RowHeight
         public int[] RowHeight
         {
             get
@@ -202,6 +274,9 @@ namespace ZintTest
                 return SymbolStruct.row_height;
             }
         }
+        #endregion
+
+        #region Error
         public string Error
         {
             get
@@ -209,6 +284,9 @@ namespace ZintTest
                 return SymbolStruct.errtxt;
             }
         }
+        #endregion
+
+        #region BitmapHeight
         public int BitmapHeight
         {
             get
@@ -216,6 +294,9 @@ namespace ZintTest
                 return SymbolStruct.bitmap_height;
             }
         }
+        #endregion
+
+        #region BitmapWidth
         public int BitmapWidth
         {
             get
@@ -223,7 +304,10 @@ namespace ZintTest
                 return SymbolStruct.bitmap_width;
             }
         }
+        #endregion
 
+        /* import from DLL */
+        #region zint_symbol Struct
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct zint_symbol
         {
@@ -278,7 +362,9 @@ namespace ZintTest
             public int bitmap_height;
             public IntPtr rendered;
         }
+        #endregion
 
+        #region Imported methods
         [DllImport("zint.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ZBarcode_Create")]
         public extern static IntPtr Create();
 
@@ -288,13 +374,7 @@ namespace ZintTest
          string input,
          int length,
          int rotate_angle);
-
-        [DllImport("zint.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ZBarcode_Encode_and_Buffer")]
-        public extern static int EncodeAndBuffer(
-         ref zint_symbol symbol,
-         string input,
-         int length,
-         int rotate_angle);
+        #endregion
 
         static Symbology()
         {

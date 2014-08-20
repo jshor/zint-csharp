@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Symbologies\DatabarExpStacked.cs" />
+    <Compile Include="Symbologies\Enums.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +54,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Symbologies\Aztec1.cs" />
+    <Compile Include="Symbologies\ChannelCode.cs" />
+    <Compile Include="Symbologies\Code128.cs" />
+    <Compile Include="Symbologies\DataMatrix.cs" />
+    <Compile Include="Symbologies\GridMatrix.cs" />
+    <Compile Include="Symbologies\Barcode.cs" />
+    <Compile Include="Symbologies\IBarcode.cs" />
+    <Compile Include="Symbologies\MaxiCode.cs" />
+    <Compile Include="Symbologies\MicroPDF.cs" />
+    <Compile Include="Symbologies\MicroQR.cs" />
+    <Compile Include="Symbologies\MSIPlessey.cs" />
+    <Compile Include="Symbologies\OptionBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Options.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Symbologies\PDF417.cs" />
+    <Compile Include="Symbologies\QRCode.cs" />
+    <Compile Include="Symbologies\Aztec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Aztec.Designer.cs">
+      <DependentUpon>Aztec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbology.cs" />
     <Compile Include="SymbologyTypes.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -66,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Symbologies\Aztec.resx">
+      <DependentUpon>Aztec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
