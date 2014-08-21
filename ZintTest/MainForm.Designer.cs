@@ -101,6 +101,7 @@
             this.options1.Name = "options1";
             this.options1.Size = new System.Drawing.Size(435, 276);
             this.options1.TabIndex = 6;
+            this.options1.OptionsChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
             // MainForm
             // 

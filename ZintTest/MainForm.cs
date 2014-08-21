@@ -48,6 +48,8 @@ namespace ZintTest
                     + this.symbology.InputMode + "; ";
 
                 Console.WriteLine(symbologyStr);
+
+                symbologyImage.Image = this.symbology.StreamSymbology(symbologyData.Text, 0);
             }
         }
 

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace ZintTest
 {
@@ -390,6 +391,21 @@ namespace ZintTest
             {
                 // dll not found, application aborted
             }
+        }
+
+        public Bitmap StreamSymbology(string input, int rotateAngle)
+        {
+            String fileName = System.IO.Path.GetTempPath() + "barcode_" + input + ".png";
+            Bitmap symbologyBitmap = null;
+
+            CreateSymbology(fileName, input, input.Length, rotateAngle);
+
+            if (System.IO.File.Exists(fileName)) {
+                symbologyBitmap = new Bitmap(fileName);
+                System.IO.File.Delete(fileName);
+            }
+
+            return symbologyBitmap;
         }
 
         public void CreateSymbology(string outfile, string input, int length, int rotateAngle)
