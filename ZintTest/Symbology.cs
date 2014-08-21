@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace ZintTest
 {
@@ -363,8 +364,9 @@ namespace ZintTest
             public IntPtr rendered;
         }
         #endregion
-
+        
         #region Imported methods
+
         [DllImport("zint.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ZBarcode_Create")]
         public extern static IntPtr Create();
 
@@ -378,19 +380,31 @@ namespace ZintTest
 
         static Symbology()
         {
-            SymbolStruct = (zint_symbol)
+            try { 
+                SymbolStruct = (zint_symbol)
 
-            // generate managed counterpart of struct
-            Marshal.PtrToStructure(Create(), typeof(zint_symbol));
+                // generate managed counterpart of struct
+                Marshal.PtrToStructure(Create(), typeof(zint_symbol));
+            }
+            catch (DllNotFoundException e)
+            {
+                // dll not found, application aborted
+            }
         }
 
         public void CreateSymbology(string outfile, string input, int length, int rotateAngle)
         {
-            this.Outfile = outfile;
-            EncodeAndPrint(ref SymbolStruct, input, input.Length, 0);
+            try { 
+                this.Outfile = outfile;
+                EncodeAndPrint(ref SymbolStruct, input, input.Length, 0);
 
-            if (SymbolStruct.errtxt != "")
-                Console.WriteLine("Errors: " + SymbolStruct.errtxt);
+                if (SymbolStruct.errtxt != "")
+                    Console.WriteLine("Errors: " + SymbolStruct.errtxt);
+            }
+            catch (DllNotFoundException e)
+            {
+                // dll not found, application aborted
+            }
         }
     }
 }

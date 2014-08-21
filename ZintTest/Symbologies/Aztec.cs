@@ -31,7 +31,7 @@ namespace ZintTest.Symbologies
             return this;
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
+        private void Aztec_Load(object sender, EventArgs e)
         {
             // minimum error correction
             String[] Option1 = new String[] { "10% + 3 words", "23% + 3 words", "36% + 3 words", "50% + 3 words" };
@@ -46,6 +46,14 @@ namespace ZintTest.Symbologies
 
             option1.PopulateOptions(Option1);
             option2.PopulateOptions(Option2);
+
+            // default values
+            symbology.Symbol = 92;
+            symbology.InputMode = 0;
+            symbology.Option1 = 0;
+            symbology.Option2 = 0;
+            option1.Enabled = false;
+            option2.Enabled = false;
         }
 
         private void optionElement_OptionsChanged(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace ZintTest
             symb.Width = 100;
             symb.Height = 100;
 
-            symb.CreateSymbology("datamatrix.png", "12345", 5, 0);
+            //symb.CreateSymbology("datamatrix.png", "12345", 5, 0);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

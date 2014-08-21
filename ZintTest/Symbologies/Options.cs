@@ -14,6 +14,7 @@ namespace ZintTest.Symbologies
     {
         private Symbology symbology;
         private IBarcode symbologyOptions;
+        public event EventHandler OptionsChanged;
         public Options()
         {
             InitializeComponent();
@@ -28,6 +29,11 @@ namespace ZintTest.Symbologies
             symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
         }
 
+        public void ChangeSymbology(int symbol)
+        {
+
+        }
+
         private void symbologyOptions_OptionsChanged(object sender, EventArgs e)
         {
             this.symbology = symbologyOptions.GetSymbology();
@@ -37,6 +43,9 @@ namespace ZintTest.Symbologies
                 + this.symbology.InputMode + "; ";
 
             Console.WriteLine(symbologyStr);
+
+            if (this.OptionsChanged != null)
+                this.OptionsChanged(new object(), new EventArgs());
         }
     }
 }

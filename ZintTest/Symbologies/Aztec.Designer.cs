@@ -45,6 +45,7 @@
             // autoResize
             // 
             this.autoResize.AutoSize = true;
+            this.autoResize.Checked = true;
             this.autoResize.Location = new System.Drawing.Point(20, 17);
             this.autoResize.Name = "autoResize";
             this.autoResize.Size = new System.Drawing.Size(110, 17);
@@ -85,7 +86,7 @@
             this.encodingGroupBox.Controls.Add(this.standardMode);
             this.encodingGroupBox.Location = new System.Drawing.Point(12, 136);
             this.encodingGroupBox.Name = "encodingGroupBox";
-            this.encodingGroupBox.Size = new System.Drawing.Size(403, 100);
+            this.encodingGroupBox.Size = new System.Drawing.Size(403, 93);
             this.encodingGroupBox.TabIndex = 5;
             this.encodingGroupBox.TabStop = false;
             this.encodingGroupBox.Text = "Encoding mode";
@@ -117,6 +118,7 @@
             // standardMode
             // 
             this.standardMode.AutoSize = true;
+            this.standardMode.Checked = true;
             this.standardMode.Location = new System.Drawing.Point(20, 26);
             this.standardMode.Name = "standardMode";
             this.standardMode.Size = new System.Drawing.Size(97, 17);
@@ -167,7 +169,8 @@
             this.Controls.Add(this.sizeGroupBox);
             this.Controls.Add(this.encodingGroupBox);
             this.Name = "Aztec";
-            this.Size = new System.Drawing.Size(428, 252);
+            this.Size = new System.Drawing.Size(428, 243);
+            this.Load += new System.EventHandler(this.Aztec_Load);
             this.encodingGroupBox.ResumeLayout(false);
             this.encodingGroupBox.PerformLayout();
             this.sizeGroupBox.ResumeLayout(false);
