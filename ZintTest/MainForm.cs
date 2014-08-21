@@ -13,6 +13,7 @@ namespace ZintTest
 {
     public partial class MainForm : Form
     {
+        public Symbology symbology;
         public MainForm()
         {
             InitializeComponent();
@@ -33,8 +34,26 @@ namespace ZintTest
         {
             if ((String)comboBox1.SelectedItem == "Aztec Code (ISO 24778)")
             {
-
+                options1.ChangeSymbology(BarcodeTypes.AZTEC);
+                this.symbology = options1.symbology;
             }
+        }
+
+        private void options_OptionsChanged(object sender, EventArgs e)
+        {
+            if (this.symbology != null)
+            {
+                String symbologyStr = "Symbology = " + this.symbology.Symbol + "; Option1 = " + this.symbology.Option1
+                    + "; Option2 = " + this.symbology.Option2 + "; Option3 = " + this.symbology.Option3 + "; Mode = "
+                    + this.symbology.InputMode + "; ";
+
+                Console.WriteLine(symbologyStr);
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

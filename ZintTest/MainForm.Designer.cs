@@ -99,7 +99,7 @@
             // 
             this.options1.Location = new System.Drawing.Point(279, 5);
             this.options1.Name = "options1";
-            this.options1.Size = new System.Drawing.Size(546, 276);
+            this.options1.Size = new System.Drawing.Size(435, 276);
             this.options1.TabIndex = 6;
             // 
             // MainForm
@@ -116,6 +116,7 @@
             this.Controls.Add(this.createBarcode);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.symbologyImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

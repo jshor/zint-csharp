@@ -12,7 +12,7 @@ namespace ZintTest.Symbologies
 {
     public partial class Options : UserControl
     {
-        private Symbology symbology;
+        public Symbology symbology;
         private IBarcode symbologyOptions;
         public event EventHandler OptionsChanged;
         public Options()
@@ -23,29 +23,37 @@ namespace ZintTest.Symbologies
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            symbologyOptions = new Aztec(symbology);
-            tabPage2.Controls.Add(symbologyOptions.GetControl());
+
+        }
+
+        public void ChangeSymbology(BarcodeTypes symbol)
+        {
+            if (symbol == BarcodeTypes.AZTEC)
+            {
+                symbologyOptions = new Aztec(symbology);
+                tabPage2.Controls.Add(symbologyOptions.GetControl());
+            }
 
             symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
         }
 
-        public void ChangeSymbology(int symbol)
-        {
-
-        }
-
         private void symbologyOptions_OptionsChanged(object sender, EventArgs e)
         {
-            this.symbology = symbologyOptions.GetSymbology();
-
-            String symbologyStr = "Symbology = " + this.symbology.Symbol + "; Option1 = " + this.symbology.Option1
-                + "; Option2 = " + this.symbology.Option2 + "; Option3 = " + this.symbology.Option3 + "; Mode = "
-                + this.symbology.InputMode + "; ";
-
-            Console.WriteLine(symbologyStr);
 
             if (this.OptionsChanged != null)
                 this.OptionsChanged(new object(), new EventArgs());
+        }
+
+        private void backgroundColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                backgroundColor.BackColor = colorDialog.Color;
+                //symbology.BackgroundColor = (String)colorDialog.Color.ToString();
+                symbologyOptions_OptionsChanged(sender, e);
+            }
         }
     }
 }
