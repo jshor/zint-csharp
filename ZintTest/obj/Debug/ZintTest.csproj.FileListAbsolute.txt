@@ -9,7 +9,6 @@ C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\ZintTest\ZintTest\obj
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\ZintTest\ZintTest\obj\Debug\ZintTest.exe
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\ZintTest\ZintTest\obj\Debug\ZintTest.pdb
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\ZintTest\ZintTest\obj\Debug\ZintTest.csprojResolveAssemblyReference.cache
-C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\bin\Debug\ZintTest.exe.config
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.exe
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.pdb
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\bin\Debug\ZintTest.exe
@@ -19,3 +18,4 @@ C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.Symbologies.Aztec.resources
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.Symbologies.Options.resources
 C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.csproj.GenerateResource.Cache
+C:\Users\Joshua Shor\Documents\Visual Studio 2013\Projects\zint-csharp\ZintTest\obj\Debug\ZintTest.csprojResolveAssemblyReference.cache

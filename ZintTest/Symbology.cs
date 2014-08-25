@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
 
 namespace ZintTest
 {
@@ -323,13 +324,13 @@ namespace ZintTest
             public int output_options;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 10)]
-            public string fgcolour;
+            public String fgcolour;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 10)]
-            public string bgcolour;
+            public String bgcolour;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
-            public string outfile;
+            public String outfile;
 
             public float scale;
             public int option_1;
@@ -341,13 +342,13 @@ namespace ZintTest
             public int input_mode;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string text;
+            public String text;
 
             public int rows;
             public int width;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string primary;
+            public String primary;
 
             [MarshalAs(UnmanagedType.ByValArray, ArraySubType = UnmanagedType.U1, SizeConst = 25454)]
             public byte[] encoded_data;
@@ -356,8 +357,9 @@ namespace ZintTest
             public int[] row_height;
 
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 100)]
-            public string errtxt;
+            public String errtxt;
 
+            [MarshalAs(UnmanagedType.ByValArray, ArraySubType = UnmanagedType.U1, SizeConst = 1000)]
             public byte[] bitmap;
 
             public int bitmap_width;
@@ -372,11 +374,42 @@ namespace ZintTest
         public extern static IntPtr Create();
 
         [DllImport("zint.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ZBarcode_Encode_and_Print")]
-        public extern static int EncodeAndPrint(
-         ref zint_symbol symbol,
-         string input,
-         int length,
-         int rotate_angle);
+        public extern static IntPtr EncodeAndPrint(
+         [In,Out] ref zint_symbol symbol,
+         String input,
+         Int32 length,
+         Int32 rotate_angle);
+
+        [DllImport("zint.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "ZBarcode_Encode_and_Buffer")]
+        public extern static int EncodeAndBuffer(
+         [In, Out] ref zint_symbol symbol,
+         String input,
+         Int32 length,
+         Int32 rotate_angle);
+
+        [DllImport("Kernel32.dll", SetLastError = true)]
+        public static extern int SetStdHandle(int device, IntPtr handle);
+
+        // in your service, dispose on shutdown..
+        FileStream filestream;
+        StreamWriter streamwriter;
+
+        void Redirect()
+        {
+            int status;
+            IntPtr handle;
+            filestream = new FileStream("logfile.txt", FileMode.Create);
+            streamwriter = new StreamWriter(filestream);
+            streamwriter.AutoFlush = true;
+            Console.SetOut(streamwriter);
+            Console.SetError(streamwriter);
+
+            handle = filestream.Handle;
+            status = SetStdHandle(-11, handle); // set stdout
+            // Check status as needed
+            status = SetStdHandle(-12, handle); // set stderr
+            // Check status as needed
+        }
         #endregion
 
         static Symbology()
@@ -408,11 +441,55 @@ namespace ZintTest
             return symbologyBitmap;
         }
 
-        public void CreateSymbology(string outfile, string input, int length, int rotateAngle)
+        public void TestSymbology()
+        {
+            try
+            {
+                Console.WriteLine("EXECUTED TestSymbology");
+                zint_symbol s = (zint_symbol)
+
+                // generate managed counterpart of struct
+                Marshal.PtrToStructure(Create(), typeof(zint_symbol));
+
+                this.Outfile = "testfile.png";
+                this.Symbol = 71;
+                System.Console.WriteLine(EncodeAndPrint(ref s, "12345", 5, 0));
+
+                if (s.errtxt != "")
+                    Console.WriteLine("Errors: " + s.errtxt);
+            }
+            catch (DllNotFoundException e)
+            {
+                // dll not found, application aborted
+            }
+        }
+
+        public void CreateSymbology(string outfile, String input, Int32 length, Int32 rotateAngle)
         {
             try { 
                 this.Outfile = outfile;
+                this.OutputOptions = 8;
+                //Console.WriteLine(EncodeAndPrint(ref SymbolStruct, input, input.Length, 0));
+
+
+                FileStream fs = new FileStream("Tesgdfgt.txt", FileMode.Create);
+                TextWriter tmp = Console.Out;
+                StreamWriter sw = new StreamWriter(fs);
+                Console.SetOut(sw);
                 EncodeAndPrint(ref SymbolStruct, input, input.Length, 0);
+                Redirect();
+             //   Console.WriteLine("Hello file"); //stdout captured from "Console.SetOut()"
+                Console.SetOut(tmp);
+                sw.Close();
+
+                string lines = "First line.\r\nSecond line.\r\nThird line.";
+
+                // Write the string to a file.
+                System.IO.StreamWriter file = new System.IO.StreamWriter("test.txt");
+                file.Write(Console.OpenStandardOutput());
+          //      File.WriteAllBytes("test.txt", Console.OpenStandardOutput("test2.txt"));
+                Console.OpenStandardOutput();
+                file.Close();
 
                 if (SymbolStruct.errtxt != "")
                     Console.WriteLine("Errors: " + SymbolStruct.errtxt);

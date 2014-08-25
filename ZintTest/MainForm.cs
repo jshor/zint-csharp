@@ -23,11 +23,12 @@ namespace ZintTest
         {
             Symbology symb = new Symbology();
             symb.Symbol = 71;
-            symb.Outfile = "datamatrix.png";
+            symb.Outfile = "datamatrix.svg";
             symb.Width = 100;
             symb.Height = 100;
 
-            //symb.CreateSymbology("datamatrix.png", "12345", 5, 0);
+            symb.CreateSymbology("datamatrix.svg", (String)symbologyData.Text, symbologyData.Text.Length, 0);
+            //symb.CreateSymbology("datamatrix.svg", "12345", 5, 0);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +50,12 @@ namespace ZintTest
 
                 Console.WriteLine(symbologyStr);
 
-                symbologyImage.Image = this.symbology.StreamSymbology(symbologyData.Text, 0);
+                this.symbology.TestSymbology();
+                
+                if (System.IO.File.Exists("out.png"))
+                {
+
+                }
             }
         }
 
