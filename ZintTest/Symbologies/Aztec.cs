@@ -18,7 +18,12 @@ namespace ZintTest.Symbologies
         public Aztec(Symbology symb)
         {
             InitializeComponent();
+
             this.symbology = symb;
+            this.symbology.Option1 = 0;
+            this.symbology.Option2 = 0;
+            this.symbology.Option3 = 0;
+            this.symbology.InputMode = 0;
         }
 
         public Symbology GetSymbology()
@@ -98,7 +103,7 @@ namespace ZintTest.Symbologies
             }
             else
             {
-                symbology.Symbol = 92;
+                symbology.Symbol = 71;
                 symbology.InputMode = 0;
             }
 

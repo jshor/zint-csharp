@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,7 +57,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Symbologies\Aztec1.cs" />
     <Compile Include="Symbologies\ChannelCode.cs" />
     <Compile Include="Symbologies\Code128.cs" />
     <Compile Include="Symbologies\DataMatrix.cs" />
@@ -83,7 +85,10 @@
       <DependentUpon>Aztec.cs</DependentUpon>
     </Compile>
     <Compile Include="Symbology.cs" />
+    <Compile Include="SymbologyIO.cs" />
     <Compile Include="SymbologyTypes.cs" />
+    <Compile Include="ZintLib.cs" />
+    <Compile Include="zint_symbol.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,8 +118,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\Error.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

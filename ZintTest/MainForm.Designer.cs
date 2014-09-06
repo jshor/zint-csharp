@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.createBarcode = new System.Windows.Forms.Button();
             this.symbologyImage = new System.Windows.Forms.PictureBox();
             this.symbologyData = new System.Windows.Forms.TextBox();
@@ -51,10 +52,14 @@
             // symbologyImage
             // 
             this.symbologyImage.BackColor = System.Drawing.Color.White;
+            this.symbologyImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("symbologyImage.BackgroundImage")));
+            this.symbologyImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.symbologyImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.symbologyImage.InitialImage = null;
             this.symbologyImage.Location = new System.Drawing.Point(12, 36);
             this.symbologyImage.Name = "symbologyImage";
             this.symbologyImage.Size = new System.Drawing.Size(261, 210);
+            this.symbologyImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.symbologyImage.TabIndex = 1;
             this.symbologyImage.TabStop = false;
             // 
@@ -64,6 +69,7 @@
             this.symbologyData.Name = "symbologyData";
             this.symbologyData.Size = new System.Drawing.Size(179, 20);
             this.symbologyData.TabIndex = 2;
+            this.symbologyData.TextChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
             // comboBox1
             // 

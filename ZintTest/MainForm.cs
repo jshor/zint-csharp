@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.MemoryMappedFiles;
 
 namespace ZintTest
 {
@@ -23,11 +24,7 @@ namespace ZintTest
         {
             Symbology symb = new Symbology();
             symb.Symbol = 71;
-            symb.Outfile = "datamatrix.svg";
-            symb.Width = 100;
-            symb.Height = 100;
-
-            symb.CreateSymbology("datamatrix.svg", (String)symbologyData.Text, symbologyData.Text.Length, 0);
+            //symb.CreateSymbology("datamatrix.svg", (String)symbologyData.Text, symbologyData.Text.Length, 0);
             //symb.CreateSymbology("datamatrix.svg", "12345", 5, 0);
         }
 
@@ -50,18 +47,35 @@ namespace ZintTest
 
                 Console.WriteLine(symbologyStr);
 
-                this.symbology.TestSymbology();
-                
-                if (System.IO.File.Exists("out.png"))
-                {
+                String tempFile = "testpng.png";// SymbologyIO.CreateTmpFile("png");
 
+                if (tempFile != null) {
+                    try { 
+                        Symbology symbology2 = new Symbology();
+                        symbology2.Symbol = 71;
+                        symbology2.Outfile = tempFile;
+                        //symbology2.CreateSymbology(tempFile, (String)symbologyData.Text, symbologyData.Text.Length, 0);
+
+                        Image previewImage = symbology2.Render((String)symbologyData.Text);
+
+                        if (previewImage != null)
+                        {
+                            symbologyImage.BackgroundImage = previewImage;
+                            SymbologyIO.DeleteTmpFile(tempFile);
+                            symbology2 = null;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // badness
+                    }
                 }
             }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            symbologyImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }
