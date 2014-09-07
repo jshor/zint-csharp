@@ -23,13 +23,15 @@ namespace ZintTest
         private void createBarcode_Click(object sender, EventArgs e)
         {
             Symbology symb = new Symbology();
-            symb.Symbol = 71;
+         //   symb.Symbol = BarcodeTypes.;
             //symb.CreateSymbology("datamatrix.svg", (String)symbologyData.Text, symbologyData.Text.Length, 0);
             //symb.CreateSymbology("datamatrix.svg", "12345", 5, 0);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            symbology = new Symbology();
+
             if ((String)comboBox1.SelectedItem == "Aztec Code (ISO 24778)")
             {
                 options1.ChangeSymbology(BarcodeTypes.AZTEC);
@@ -43,32 +45,22 @@ namespace ZintTest
             {
                 String symbologyStr = "Symbology = " + this.symbology.Symbol + "; Option1 = " + this.symbology.Option1
                     + "; Option2 = " + this.symbology.Option2 + "; Option3 = " + this.symbology.Option3 + "; Mode = "
-                    + this.symbology.InputMode + "; ";
+                    + this.symbology.InputMode + "; FGcolor = " + this.symbology.ForegroundColor;
 
                 Console.WriteLine(symbologyStr);
 
-                String tempFile = "testpng.png";// SymbologyIO.CreateTmpFile("png");
+                try { 
+                    Image previewImage = symbology.Render((String)symbologyData.Text);
 
-                if (tempFile != null) {
-                    try { 
-                        Symbology symbology2 = new Symbology();
-                        symbology2.Symbol = 71;
-                        symbology2.Outfile = tempFile;
-                        //symbology2.CreateSymbology(tempFile, (String)symbologyData.Text, symbologyData.Text.Length, 0);
-
-                        Image previewImage = symbology2.Render((String)symbologyData.Text);
-
-                        if (previewImage != null)
-                        {
-                            symbologyImage.BackgroundImage = previewImage;
-                            SymbologyIO.DeleteTmpFile(tempFile);
-                            symbology2 = null;
-                        }
-                    }
-                    catch (Exception ex)
+                    if (previewImage != null)
                     {
-                        // badness
+                        symbologyImage.BackgroundImage = previewImage;
                     }
+                }
+                catch (Exception ex)
+                {
+                    // badness
+                    Console.WriteLine("missing");
                 }
             }
         }

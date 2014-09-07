@@ -53,7 +53,7 @@ namespace ZintTest.Symbologies
             option2.PopulateOptions(Option2);
 
             // default values
-            symbology.Symbol = 92;
+            symbology.Symbol = BarcodeTypes.AZTEC;
             symbology.InputMode = 0;
             symbology.Option1 = 0;
             symbology.Option2 = 0;
@@ -93,17 +93,17 @@ namespace ZintTest.Symbologies
         {
             if (gs1DataMode.Checked)
             {
-                symbology.Symbol = 92;
+                symbology.Symbol = BarcodeTypes.AZTEC;
                 symbology.InputMode = 2;
             }
             else if (hibcMode.Checked)
             {
-                symbology.Symbol = 112;
+                symbology.Symbol = BarcodeTypes.HIBC_AZTEC;
                 symbology.InputMode = 0;
             }
             else
             {
-                symbology.Symbol = 71;
+                symbology.Symbol = BarcodeTypes.AZTEC;
                 symbology.InputMode = 0;
             }
 

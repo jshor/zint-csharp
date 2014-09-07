@@ -31,6 +31,7 @@ namespace ZintTest.Symbologies
             if (symbol == BarcodeTypes.AZTEC)
             {
                 symbologyOptions = new Aztec(symbology);
+                symbology.Symbol = BarcodeTypes.AZTEC;
                 tabPage2.Controls.Add(symbologyOptions.GetControl());
             }
 

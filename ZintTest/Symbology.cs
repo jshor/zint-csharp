@@ -16,257 +16,26 @@ namespace ZintTest
         public static zint_symbol SymbolStruct;
 
         #region Getters and setters
-        #region Symbol
-        public int Symbol
-        {
-            get
-            {
-                return SymbolStruct.symbology;
-            }
-            set
-            {
-                SymbolStruct.symbology = value;
-            }
-        }
-        #endregion
 
-        #region Height
-        public int Height
-        {
-            get
-            {
-                return SymbolStruct.height;
-            }
-            set
-            {
-                SymbolStruct.height = value;
-            }
-        }
-        #endregion
+        public BarcodeTypes Symbol;
+        public int Height;
+        public int WhitespaceWidth;
+        public int BorderWidth;
+        public int OutputOptions;
+        public int Option1;
+        public int Option2;
+        public int Option3;
+        public int ShowHrt;
+        public int InputMode;
+        public int Rows;
+        public int Width;
+        public String ForegroundColor;
+        public String BackgroundColor;
+        public String Outfile;
+        public String Text;
+        public String Primary;
+        public float Scale;
 
-        #region WhitespaceWidth
-        public int WhitespaceWidth
-        {
-            get
-            {
-                return SymbolStruct.whitespace_width;
-            }
-            set
-            {
-                SymbolStruct.whitespace_width = value;
-            }
-        }
-        #endregion
-
-        #region BorderWidth
-        public int BorderWidth
-        {
-            get
-            {
-                return SymbolStruct.border_width;
-            }
-            set
-            {
-                SymbolStruct.border_width = value;
-            }
-        }
-        #endregion
-
-        #region OutputOptions
-        public int OutputOptions
-        {
-            get
-            {
-                return SymbolStruct.output_options;
-            }
-            set
-            {
-                SymbolStruct.output_options = value;
-            }
-        }
-        #endregion
-
-        #region Option1
-        public int Option1
-        {
-            get
-            {
-                return SymbolStruct.option_1;
-            }
-            set
-            {
-                SymbolStruct.option_1 = value;
-            }
-        }
-        #endregion
-
-        #region Option2
-        public int Option2
-        {
-            get
-            {
-                return SymbolStruct.option_2;
-            }
-            set
-            {
-                SymbolStruct.option_2 = value;
-            }
-        }
-        #endregion
-
-        #region Option3
-        public int Option3
-        {
-            get
-            {
-                return SymbolStruct.option_3;
-            }
-            set
-            {
-                SymbolStruct.option_3 = value;
-            }
-        }
-        #endregion
-
-        #region ShowHrt
-        public int ShowHrt
-        {
-            get
-            {
-                return SymbolStruct.show_hrt;
-            }
-            set
-            {
-                SymbolStruct.show_hrt = value;
-            }
-        }
-        #endregion
-
-        #region InputMode
-        public int InputMode
-        {
-            get
-            {
-                return SymbolStruct.input_mode;
-            }
-            set
-            {
-                SymbolStruct.input_mode = value;
-            }
-        }
-        #endregion
-
-        #region Rows
-        public int Rows
-        {
-            get
-            {
-                return SymbolStruct.rows;
-            }
-            set
-            {
-                SymbolStruct.rows = value;
-            }
-        }
-        #endregion
-
-        #region Width
-        public int Width
-        {
-            get
-            {
-                return SymbolStruct.width;
-            }
-            set
-            {
-                SymbolStruct.width = value;
-            }
-        }
-        #endregion
-
-        #region ForegroundColor
-        public String ForegroundColor
-        {
-            get
-            {
-                return SymbolStruct.fgcolour;
-            }
-            set
-            {
-                SymbolStruct.fgcolour = value;
-            }
-        }
-        #endregion
-
-        #region BackgroundColor
-        public String BackgroundColor
-        {
-            get
-            {
-                return SymbolStruct.bgcolour;
-            }
-            set
-            {
-                SymbolStruct.bgcolour = value;
-            }
-        }
-        #endregion
-
-        #region Outfile
-        public String Outfile
-        {
-            get
-            {
-                return SymbolStruct.outfile;
-            }
-            set
-            {
-                SymbolStruct.outfile = value;
-            }
-        }
-        #endregion
-
-        #region Text
-        public String Text
-        {
-            get
-            {
-                return SymbolStruct.text;
-            }
-            set
-            {
-                SymbolStruct.text = value;
-            }
-        }
-        #endregion
-
-        #region Primary
-        public String Primary
-        {
-            get
-            {
-                return SymbolStruct.primary;
-            }
-            set
-            {
-                SymbolStruct.primary = value;
-            }
-        }
-        #endregion
-
-        #region Scale
-        public float Scale
-        {
-            get
-            {
-                return SymbolStruct.scale;
-            }
-            set
-            {
-                SymbolStruct.scale = value;
-            }
-        }
-        #endregion
         #endregion
 
         #region Read-only Getters
@@ -329,20 +98,19 @@ namespace ZintTest
         {
             Bitmap bitmap = null;
 
-            try { 
+            try {
                 SymbolStruct = (zint_symbol)
 
                 // generate managed counterpart of struct
                 Marshal.PtrToStructure(ZintLib.Create(), typeof(zint_symbol));
 
-                // change some settings
-                SymbolStruct.symbology = 71;
-                SymbolStruct.outfile = "baro.png";
-
-                //  str = "";
+                SymbolStruct = SetStructVariables(SymbolStruct);
 
                 if (ZintLib.EncodeAndBuffer(ref SymbolStruct, str, str.Length, 0) == 0)
                 {
+                    // copy generated members to class
+                    GetStructVariables(SymbolStruct);
+
                     // no error returned, create barcode preview
                     bitmap = new Bitmap(SymbolStruct.bitmap_width, SymbolStruct.bitmap_height);
 
@@ -393,6 +161,56 @@ namespace ZintTest
             g.Flush();
 
             return bitmap;
+        }
+
+        public zint_symbol SetStructVariables(zint_symbol newStruct)
+        {
+            // copy the member settings from the old struct to the new one
+            // though this may seem inefficient, this is necessary to avoid memory overconsumption
+            // from the bitmap pointer
+            newStruct.symbology = this.Symbol;
+            newStruct.height = this.Height;
+            newStruct.whitespace_width = this.WhitespaceWidth;
+            newStruct.border_width = this.BorderWidth;
+            newStruct.output_options = this.OutputOptions;
+            newStruct.option_1 = this.Option1;
+            newStruct.option_2 = this.Option2;
+            newStruct.option_3 = this.Option3;
+            newStruct.show_hrt = this.ShowHrt;
+            newStruct.input_mode = this.InputMode;
+            newStruct.rows = this.Rows;
+            newStruct.width = this.Width;
+            newStruct.fgcolour = this.ForegroundColor;
+            newStruct.bgcolour = this.BackgroundColor;
+            newStruct.outfile = this.Outfile;
+            newStruct.text = this.Text;
+            newStruct.primary = this.Primary;
+            newStruct.scale = this.Scale;
+
+            return newStruct;
+        }
+        public void GetStructVariables(zint_symbol newStruct)
+        {
+            // copy the member settings from the old struct to the new one
+            // though this may seem inefficient, this is necessary to avoid memory overconsumption
+            // from the bitmap pointer
+            this.Height = newStruct.height;
+            this.WhitespaceWidth = newStruct.whitespace_width;
+            this.BorderWidth = newStruct.border_width;
+            this.OutputOptions = newStruct.output_options;
+            this.Option1 = newStruct.option_1;
+            this.Option2 = newStruct.option_2;
+            this.Option3 = newStruct.option_3;
+            this.ShowHrt = newStruct.show_hrt;
+            this.InputMode = newStruct.input_mode;
+            this.Rows = newStruct.rows;
+            this.Width = newStruct.width;
+            this.ForegroundColor = newStruct.fgcolour;
+            this.BackgroundColor = newStruct.bgcolour;
+            this.Outfile = newStruct.outfile;
+            this.Text = newStruct.text;
+            this.Primary = newStruct.primary;
+            this.Scale = newStruct.scale;
         }
     }
 }
