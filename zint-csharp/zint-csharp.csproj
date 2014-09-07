@@ -53,6 +53,7 @@
     <Compile Include="Symbologies\Aztec.Designer.cs">
       <DependentUpon>Aztec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Symbologies\Barcode.cs" />
     <Compile Include="Symbologies\DatabarExpStacked.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="MainForm.cs">
@@ -72,21 +73,19 @@
     <Compile Include="Symbologies\MicroPDF.cs" />
     <Compile Include="Symbologies\MicroQR.cs" />
     <Compile Include="Symbologies\MSIPlessey.cs" />
-    <Compile Include="Symbologies\OptionBox.cs">
+    <Compile Include="Controls\OptionBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Symbologies\Options.cs">
+    <Compile Include="Controls\Options.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Symbologies\Options.Designer.cs">
+    <Compile Include="Controls\Options.Designer.cs">
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="Symbologies\PDF417.cs" />
     <Compile Include="Symbologies\QRCode.cs" />
     <Compile Include="Symbologies\Standard.cs" />
     <Compile Include="Symbology.cs" />
-    <Compile Include="SymbologyIO.cs" />
-    <Compile Include="SymbologyTypes.cs" />
     <Compile Include="ZBarcode.cs" />
     <Compile Include="zint_symbol.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -105,7 +104,7 @@
     <EmbeddedResource Include="Symbologies\Aztec.resx">
       <DependentUpon>Aztec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Symbologies\Options.resx">
+    <EmbeddedResource Include="Controls\Options.resx">
       <DependentUpon>Options.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZintTest;
+using ZintWrapper;
 
-namespace ZintTest.Symbologies
+namespace ZintWrapper.Symbologies
 {
     class ChannelCode : Barcode
     {
