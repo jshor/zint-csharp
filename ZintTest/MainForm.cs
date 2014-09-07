@@ -35,7 +35,7 @@ namespace ZintTest
         {
             if (this.symbology != null)
             {
-                String symbologyStr = "Symbology = " + this.symbology.Symbol + "; Option1 = " + this.symbology.Option1
+                String symbologyStr = "Symbology = " + (int)this.symbology.Symbol + "; Option1 = " + this.symbology.Option1
                     + "; Option2 = " + this.symbology.Option2 + "; Option3 = " + this.symbology.Option3 + "; Mode = "
                     + this.symbology.InputMode + "; FGcolor = " + this.symbology.ForegroundColor;
 

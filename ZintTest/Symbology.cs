@@ -25,8 +25,7 @@ namespace ZintTest
             }
             set
             {
-                Console.WriteLine("type code: " + (int)value.GetTypeCode());
-                SymbolStruct.symbology = (int)value.GetTypeCode();
+                SymbolStruct.symbology = (Int32)value;
             }
         }
         #endregion

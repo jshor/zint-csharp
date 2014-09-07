@@ -31,10 +31,10 @@ namespace ZintTest.Symbologies
             if (symbol == BarcodeTypes.AZTEC)
             {
                 symbologyOptions = new Aztec(symbology);
-                symbology.Symbol = (BarcodeTypes)71;
                 tabPage2.Controls.Add(symbologyOptions.GetControl());
             }
 
+            symbology.Symbol = BarcodeTypes.AZTEC;
             symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
         }
 
