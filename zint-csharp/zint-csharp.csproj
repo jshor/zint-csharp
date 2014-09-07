@@ -54,7 +54,7 @@
       <DependentUpon>Aztec.cs</DependentUpon>
     </Compile>
     <Compile Include="Symbologies\DatabarExpStacked.cs" />
-    <Compile Include="Symbologies\Enums.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +67,6 @@
     <Compile Include="Symbologies\Code128.cs" />
     <Compile Include="Symbologies\DataMatrix.cs" />
     <Compile Include="Symbologies\GridMatrix.cs" />
-    <Compile Include="Symbologies\Barcode.cs" />
     <Compile Include="Symbologies\IBarcode.cs" />
     <Compile Include="Symbologies\MaxiCode.cs" />
     <Compile Include="Symbologies\MicroPDF.cs" />
