@@ -28,14 +28,33 @@ namespace ZintTest.Symbologies
 
         public void ChangeSymbology(BarcodeTypes symbol)
         {
-            if (symbol == BarcodeTypes.AZTEC)
+            // remove all tabs except the "appearance" tab
+            for (int i = 0; i < generalTab.TabPages.Count; i++ )
             {
-                symbologyOptions = new Aztec(symbology);
-                tabPage2.Controls.Add(symbologyOptions.GetControl());
+                if (generalTab.TabPages[i] != appearanceTab)
+                    generalTab.TabPages.Remove(generalTab.TabPages[i]);
             }
 
-            symbology.Symbol = BarcodeTypes.AZTEC;
-            symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
+            switch (symbol)
+            {
+                case BarcodeTypes.AZTEC:
+                    symbologyOptions = new Aztec(symbology);
+                    break;
+                default:
+                    symbologyOptions = null;
+                    break;
+            }
+
+            if(symbologyOptions != null)
+            {
+                // add the "options" tab if it's set and add event listener
+                TabPage optionsTab = new TabPage("Options");
+                optionsTab.Controls.Add(symbologyOptions.GetControl());
+                generalTab.TabPages.Add(optionsTab);
+                symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
+            }
+
+            symbology.Symbol = symbol;
         }
 
         private void symbologyOptions_OptionsChanged(object sender, EventArgs e)
@@ -82,6 +101,31 @@ namespace ZintTest.Symbologies
             }
 
             return rtn;
+        }
+
+        private void height_ValueChanged(object sender, EventArgs e)
+        {
+            symbology.Height = (int)height.Value;
+        }
+
+        private void borderWidth_ValueChanged(object sender, EventArgs e)
+        {
+            symbology.BorderWidth = (int)borderWidth.Value;
+        }
+
+        private void whitespace_ValueChanged(object sender, EventArgs e)
+        {
+            symbology.WhitespaceWidth = (int)whitespace.Value;
+        }
+
+        private void printingScale_ValueChanged(object sender, EventArgs e)
+        {
+            symbology.Scale = (int)printingScale.Value;
+        }
+
+        private void rotation_ValueChanged(object sender, EventArgs e)
+        {
+            symbology.Rotation = (int)rotation.Value;
         }
     }
 }

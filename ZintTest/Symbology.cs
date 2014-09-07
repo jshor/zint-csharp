@@ -267,6 +267,10 @@ namespace ZintTest
             }
         }
         #endregion
+
+        #region Rotation
+        public int Rotation;
+        #endregion
         #endregion
 
         #region read-only getters
@@ -330,7 +334,7 @@ namespace ZintTest
             Bitmap bitmap = null;
 
             try {
-                if (ZBarcode.EncodeAndBuffer(ref SymbolStruct, str, str.Length, 0) == 0)
+                if (ZBarcode.EncodeAndBuffer(ref SymbolStruct, str, str.Length, this.Rotation) == 0)
                 {
                     // no error returned, create barcode preview
                     bitmap = new Bitmap(SymbolStruct.bitmap_width, SymbolStruct.bitmap_height);

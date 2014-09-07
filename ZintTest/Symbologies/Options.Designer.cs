@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.generalTab = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.appearanceTab = new System.Windows.Forms.TabPage();
+            this.rotationLabel = new System.Windows.Forms.Label();
+            this.rotation = new System.Windows.Forms.NumericUpDown();
             this.foregroundColor = new System.Windows.Forms.Button();
             this.backgroundColor = new System.Windows.Forms.Button();
             this.foregroundColorLabel = new System.Windows.Forms.Label();
@@ -44,9 +46,9 @@
             this.borderWidthLabel = new System.Windows.Forms.Label();
             this.heightLabel = new System.Windows.Forms.Label();
             this.height = new System.Windows.Forms.NumericUpDown();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.generalTab.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.appearanceTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rotation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.whitespace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).BeginInit();
@@ -55,43 +57,61 @@
             // 
             // generalTab
             // 
-            this.generalTab.Controls.Add(this.tabPage1);
-            this.generalTab.Controls.Add(this.tabPage2);
+            this.generalTab.Controls.Add(this.appearanceTab);
             this.generalTab.Location = new System.Drawing.Point(0, 3);
             this.generalTab.Name = "generalTab";
             this.generalTab.SelectedIndex = 0;
             this.generalTab.Size = new System.Drawing.Size(431, 267);
             this.generalTab.TabIndex = 0;
             // 
-            // tabPage1
+            // appearanceTab
             // 
-            this.tabPage1.Controls.Add(this.foregroundColor);
-            this.tabPage1.Controls.Add(this.backgroundColor);
-            this.tabPage1.Controls.Add(this.foregroundColorLabel);
-            this.tabPage1.Controls.Add(this.backgroundColorLabel);
-            this.tabPage1.Controls.Add(this.borderType);
-            this.tabPage1.Controls.Add(this.printingScale);
-            this.tabPage1.Controls.Add(this.whitespace);
-            this.tabPage1.Controls.Add(this.borderWidth);
-            this.tabPage1.Controls.Add(this.borderTypeLabel);
-            this.tabPage1.Controls.Add(this.whitespaceLabel);
-            this.tabPage1.Controls.Add(this.printingScaleLabel);
-            this.tabPage1.Controls.Add(this.borderWidthLabel);
-            this.tabPage1.Controls.Add(this.heightLabel);
-            this.tabPage1.Controls.Add(this.height);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(423, 241);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.appearanceTab.Controls.Add(this.rotationLabel);
+            this.appearanceTab.Controls.Add(this.rotation);
+            this.appearanceTab.Controls.Add(this.foregroundColor);
+            this.appearanceTab.Controls.Add(this.backgroundColor);
+            this.appearanceTab.Controls.Add(this.foregroundColorLabel);
+            this.appearanceTab.Controls.Add(this.backgroundColorLabel);
+            this.appearanceTab.Controls.Add(this.borderType);
+            this.appearanceTab.Controls.Add(this.printingScale);
+            this.appearanceTab.Controls.Add(this.whitespace);
+            this.appearanceTab.Controls.Add(this.borderWidth);
+            this.appearanceTab.Controls.Add(this.borderTypeLabel);
+            this.appearanceTab.Controls.Add(this.whitespaceLabel);
+            this.appearanceTab.Controls.Add(this.printingScaleLabel);
+            this.appearanceTab.Controls.Add(this.borderWidthLabel);
+            this.appearanceTab.Controls.Add(this.heightLabel);
+            this.appearanceTab.Controls.Add(this.height);
+            this.appearanceTab.Location = new System.Drawing.Point(4, 22);
+            this.appearanceTab.Name = "appearanceTab";
+            this.appearanceTab.Padding = new System.Windows.Forms.Padding(3);
+            this.appearanceTab.Size = new System.Drawing.Size(423, 241);
+            this.appearanceTab.TabIndex = 0;
+            this.appearanceTab.Text = "appearanceTab";
+            this.appearanceTab.UseVisualStyleBackColor = true;
+            // 
+            // rotationLabel
+            // 
+            this.rotationLabel.AutoSize = true;
+            this.rotationLabel.Location = new System.Drawing.Point(256, 21);
+            this.rotationLabel.Name = "rotationLabel";
+            this.rotationLabel.Size = new System.Drawing.Size(50, 13);
+            this.rotationLabel.TabIndex = 15;
+            this.rotationLabel.Text = "Rotation:";
+            // 
+            // rotation
+            // 
+            this.rotation.Location = new System.Drawing.Point(318, 19);
+            this.rotation.Name = "rotation";
+            this.rotation.Size = new System.Drawing.Size(90, 20);
+            this.rotation.TabIndex = 14;
+            this.rotation.ValueChanged += new System.EventHandler(this.rotation_ValueChanged);
             // 
             // foregroundColor
             // 
             this.foregroundColor.BackColor = System.Drawing.Color.Black;
             this.foregroundColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.foregroundColor.Location = new System.Drawing.Point(357, 55);
+            this.foregroundColor.Location = new System.Drawing.Point(357, 94);
             this.foregroundColor.Name = "foregroundColor";
             this.foregroundColor.Size = new System.Drawing.Size(51, 23);
             this.foregroundColor.TabIndex = 13;
@@ -101,7 +121,7 @@
             // backgroundColor
             // 
             this.backgroundColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backgroundColor.Location = new System.Drawing.Point(357, 16);
+            this.backgroundColor.Location = new System.Drawing.Point(357, 55);
             this.backgroundColor.Name = "backgroundColor";
             this.backgroundColor.Size = new System.Drawing.Size(51, 23);
             this.backgroundColor.TabIndex = 12;
@@ -111,7 +131,7 @@
             // foregroundColorLabel
             // 
             this.foregroundColorLabel.AutoSize = true;
-            this.foregroundColorLabel.Location = new System.Drawing.Point(256, 60);
+            this.foregroundColorLabel.Location = new System.Drawing.Point(256, 99);
             this.foregroundColorLabel.Name = "foregroundColorLabel";
             this.foregroundColorLabel.Size = new System.Drawing.Size(91, 13);
             this.foregroundColorLabel.TabIndex = 11;
@@ -120,7 +140,7 @@
             // backgroundColorLabel
             // 
             this.backgroundColorLabel.AutoSize = true;
-            this.backgroundColorLabel.Location = new System.Drawing.Point(256, 21);
+            this.backgroundColorLabel.Location = new System.Drawing.Point(256, 60);
             this.backgroundColorLabel.Name = "backgroundColorLabel";
             this.backgroundColorLabel.Size = new System.Drawing.Size(95, 13);
             this.backgroundColorLabel.TabIndex = 10;
@@ -140,6 +160,7 @@
             this.printingScale.Name = "printingScale";
             this.printingScale.Size = new System.Drawing.Size(120, 20);
             this.printingScale.TabIndex = 8;
+            this.printingScale.ValueChanged += new System.EventHandler(this.printingScale_ValueChanged);
             // 
             // whitespace
             // 
@@ -147,6 +168,7 @@
             this.whitespace.Name = "whitespace";
             this.whitespace.Size = new System.Drawing.Size(120, 20);
             this.whitespace.TabIndex = 7;
+            this.whitespace.ValueChanged += new System.EventHandler(this.whitespace_ValueChanged);
             // 
             // borderWidth
             // 
@@ -154,6 +176,7 @@
             this.borderWidth.Name = "borderWidth";
             this.borderWidth.Size = new System.Drawing.Size(120, 20);
             this.borderWidth.TabIndex = 6;
+            this.borderWidth.ValueChanged += new System.EventHandler(this.borderWidth_ValueChanged);
             // 
             // borderTypeLabel
             // 
@@ -206,17 +229,7 @@
             this.height.Name = "height";
             this.height.Size = new System.Drawing.Size(120, 20);
             this.height.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(423, 241);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            this.height.ValueChanged += new System.EventHandler(this.height_ValueChanged);
             // 
             // Options
             // 
@@ -226,8 +239,9 @@
             this.Name = "Options";
             this.Size = new System.Drawing.Size(434, 273);
             this.generalTab.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.appearanceTab.ResumeLayout(false);
+            this.appearanceTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rotation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.whitespace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).EndInit();
@@ -239,8 +253,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl generalTab;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage appearanceTab;
         private System.Windows.Forms.Label foregroundColorLabel;
         private System.Windows.Forms.Label backgroundColorLabel;
         private System.Windows.Forms.ComboBox borderType;
@@ -255,5 +268,7 @@
         private System.Windows.Forms.NumericUpDown height;
         private System.Windows.Forms.Button foregroundColor;
         private System.Windows.Forms.Button backgroundColor;
+        private System.Windows.Forms.Label rotationLabel;
+        private System.Windows.Forms.NumericUpDown rotation;
     }
 }

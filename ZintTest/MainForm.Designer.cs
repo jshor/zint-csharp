@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.symbologyImage = new System.Windows.Forms.PictureBox();
             this.symbologyData = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -41,7 +40,6 @@
             // symbologyImage
             // 
             this.symbologyImage.BackColor = System.Drawing.Color.White;
-            this.symbologyImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("symbologyImage.BackgroundImage")));
             this.symbologyImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.symbologyImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.symbologyImage.InitialImage = null;
@@ -56,7 +54,7 @@
             // 
             this.symbologyData.Location = new System.Drawing.Point(12, 254);
             this.symbologyData.Name = "symbologyData";
-            this.symbologyData.Size = new System.Drawing.Size(179, 20);
+            this.symbologyData.Size = new System.Drawing.Size(261, 20);
             this.symbologyData.TabIndex = 2;
             this.symbologyData.TextChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
@@ -65,7 +63,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Select barcode...",
-            "Aztec Code (ISO 24778)"});
+            "Aztec Code (ISO 24778)",
+            "Aztec Runes"});
             this.comboBox1.Location = new System.Drawing.Point(12, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 21);
@@ -94,7 +93,7 @@
             // 
             this.options1.Location = new System.Drawing.Point(279, 5);
             this.options1.Name = "options1";
-            this.options1.Size = new System.Drawing.Size(435, 276);
+            this.options1.Size = new System.Drawing.Size(435, 273);
             this.options1.TabIndex = 6;
             this.options1.OptionsChanged += new System.EventHandler(this.options_OptionsChanged);
             // 

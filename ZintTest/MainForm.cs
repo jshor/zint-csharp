@@ -24,11 +24,18 @@ namespace ZintTest
         {
             symbology = new Symbology();
 
-            if ((String)comboBox1.SelectedItem == "Aztec Code (ISO 24778)")
+            switch ((String)comboBox1.SelectedItem)
             {
-                options1.ChangeSymbology(BarcodeTypes.AZTEC);
-                this.symbology = options1.symbology;
+                case "Aztec Code (ISO 24778)":
+                    options1.ChangeSymbology(BarcodeTypes.AZTEC);
+                    break;
+                case "Aztec Runes":
+                    options1.ChangeSymbology(BarcodeTypes.AZRUNE);
+                    break;
             }
+
+            this.symbology = options1.symbology;
+            options_OptionsChanged(sender, e);
         }
 
         private void options_OptionsChanged(object sender, EventArgs e)

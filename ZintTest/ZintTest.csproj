@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Symbologies\Aztec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Aztec.Designer.cs">
+      <DependentUpon>Aztec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\DatabarExpStacked.cs" />
     <Compile Include="Symbologies\Enums.cs" />
     <Compile Include="MainForm.cs">
@@ -78,12 +84,7 @@
     </Compile>
     <Compile Include="Symbologies\PDF417.cs" />
     <Compile Include="Symbologies\QRCode.cs" />
-    <Compile Include="Symbologies\Aztec.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Symbologies\Aztec.Designer.cs">
-      <DependentUpon>Aztec.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Symbologies\Standard.cs" />
     <Compile Include="Symbology.cs" />
     <Compile Include="SymbologyIO.cs" />
     <Compile Include="SymbologyTypes.cs" />
