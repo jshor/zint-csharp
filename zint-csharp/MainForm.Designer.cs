@@ -91,10 +91,10 @@
             // 
             // options1
             // 
-            this.options1.Location = new System.Drawing.Point(279, 5);
+            this.options1.Location = new System.Drawing.Point(279, 6);
             this.options1.Name = "options1";
-            this.options1.Size = new System.Drawing.Size(435, 273);
-            this.options1.TabIndex = 6;
+            this.options1.Size = new System.Drawing.Size(434, 273);
+            this.options1.TabIndex = 8;
             this.options1.OptionsChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
             // MainForm
@@ -102,9 +102,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 318);
+            this.Controls.Add(this.options1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.options1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.symbologyData);
             this.Controls.Add(this.symbologyImage);
@@ -123,8 +123,8 @@
         private System.Windows.Forms.TextBox symbologyData;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-        private Symbologies.Options options1;
         private System.Windows.Forms.Button button2;
+        private Symbologies.Options options1;
     }
 }
 

@@ -21,18 +21,15 @@ namespace ZintTest.Symbologies
             symbology = new Symbology();
         }
 
-        private void tabPage2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         public void ChangeSymbology(BarcodeTypes symbol)
         {
             // remove all tabs except the "appearance" tab
             for (int i = 0; i < generalTab.TabPages.Count; i++ )
             {
                 if (generalTab.TabPages[i] != appearanceTab)
+                {
                     generalTab.TabPages.Remove(generalTab.TabPages[i]);
+                }
             }
 
             switch (symbol)
@@ -59,7 +56,6 @@ namespace ZintTest.Symbologies
 
         private void symbologyOptions_OptionsChanged(object sender, EventArgs e)
         {
-
             if (this.OptionsChanged != null)
                 this.OptionsChanged(new object(), new EventArgs());
         }
