@@ -20,6 +20,7 @@ namespace ZintTest.Symbologies
             InitializeComponent();
 
             this.symbology = symb;
+            this.symbology.Symbol = BarcodeTypes.AZTEC;
             this.symbology.Option1 = 0;
             this.symbology.Option2 = 0;
             this.symbology.Option3 = 0;

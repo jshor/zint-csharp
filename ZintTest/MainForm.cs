@@ -20,14 +20,6 @@ namespace ZintTest
             InitializeComponent();
         }
 
-        private void createBarcode_Click(object sender, EventArgs e)
-        {
-            Symbology symb = new Symbology();
-         //   symb.Symbol = BarcodeTypes.;
-            //symb.CreateSymbology("datamatrix.svg", (String)symbologyData.Text, symbologyData.Text.Length, 0);
-            //symb.CreateSymbology("datamatrix.svg", "12345", 5, 0);
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             symbology = new Symbology();

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.createBarcode = new System.Windows.Forms.Button();
             this.symbologyImage = new System.Windows.Forms.PictureBox();
             this.symbologyData = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -38,16 +37,6 @@
             this.options1 = new ZintTest.Symbologies.Options();
             ((System.ComponentModel.ISupportInitialize)(this.symbologyImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // createBarcode
-            // 
-            this.createBarcode.Location = new System.Drawing.Point(197, 252);
-            this.createBarcode.Name = "createBarcode";
-            this.createBarcode.Size = new System.Drawing.Size(76, 23);
-            this.createBarcode.TabIndex = 0;
-            this.createBarcode.Text = "Create";
-            this.createBarcode.UseVisualStyleBackColor = true;
-            this.createBarcode.Click += new System.EventHandler(this.createBarcode_Click);
             // 
             // symbologyImage
             // 
@@ -120,7 +109,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.symbologyData);
             this.Controls.Add(this.symbologyImage);
-            this.Controls.Add(this.createBarcode);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -132,7 +120,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button createBarcode;
         private System.Windows.Forms.PictureBox symbologyImage;
         private System.Windows.Forms.TextBox symbologyData;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -14,7 +14,7 @@ namespace ZintTest
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct zint_symbol
     {
-        public BarcodeTypes symbology;
+        public int symbology;
 
         public int height;
         public int whitespace_width;

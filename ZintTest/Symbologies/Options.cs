@@ -31,7 +31,7 @@ namespace ZintTest.Symbologies
             if (symbol == BarcodeTypes.AZTEC)
             {
                 symbologyOptions = new Aztec(symbology);
-                symbology.Symbol = BarcodeTypes.AZTEC;
+                symbology.Symbol = (BarcodeTypes)71;
                 tabPage2.Controls.Add(symbologyOptions.GetControl());
             }
 
@@ -52,9 +52,36 @@ namespace ZintTest.Symbologies
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 backgroundColor.BackColor = colorDialog.Color;
-                //symbology.BackgroundColor = (String)colorDialog.Color.ToString();
+                symbology.BackgroundColor = ColorToHex(colorDialog.Color);
                 symbologyOptions_OptionsChanged(sender, e);
             }
+        }
+
+        private void foregroundColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                foregroundColor.BackColor = colorDialog.Color;
+                symbology.ForegroundColor = ColorToHex(colorDialog.Color);
+                symbologyOptions_OptionsChanged(sender, e);
+            }
+        }
+
+        private static String ColorToHex(System.Drawing.Color c)
+        {
+            String rtn = String.Empty;
+            try
+            {
+                rtn = c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
+            }
+            catch (Exception ex)
+            {
+                //doing nothing
+            }
+
+            return rtn;
         }
     }
 }

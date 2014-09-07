@@ -11,7 +11,7 @@ using System.Drawing.Drawing2D;
 
 namespace ZintTest
 {
-    class ZintLib
+    class ZBarcode
     {
         [DllImport("zint.dll", EntryPoint = "ZBarcode_Create", CallingConvention = CallingConvention.Cdecl)]
         public extern static IntPtr Create();
@@ -31,6 +31,9 @@ namespace ZintTest
          int rotate_angle);
 
         [DllImport("zint.dll", EntryPoint = "ZBarcode_Delete", CallingConvention = CallingConvention.Cdecl)]
-        public extern static void Delete(zint_symbol symbol);
+        public extern static void Delete(ref zint_symbol symbol);
+
+        [DllImport("zint.dll", EntryPoint = "ZBarcode_Clear", CallingConvention = CallingConvention.Cdecl)]
+        public extern static void Clear(ref zint_symbol symbol);
     }
 }

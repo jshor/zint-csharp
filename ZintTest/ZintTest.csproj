@@ -87,7 +87,7 @@
     <Compile Include="Symbology.cs" />
     <Compile Include="SymbologyIO.cs" />
     <Compile Include="SymbologyTypes.cs" />
-    <Compile Include="ZintLib.cs" />
+    <Compile Include="ZBarcode.cs" />
     <Compile Include="zint_symbol.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
