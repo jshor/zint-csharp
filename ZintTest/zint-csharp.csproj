@@ -7,8 +7,8 @@
     <ProjectGuid>{059F45C1-F8A4-4004-9EBF-1B2114CFF077}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZintTest</RootNamespace>
-    <AssemblyName>ZintTest</AssemblyName>
+    <RootNamespace>ZintWrapper</RootNamespace>
+    <AssemblyName>zint-csharp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
