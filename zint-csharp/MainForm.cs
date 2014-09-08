@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.MemoryMappedFiles;
 
-namespace ZintTest
+namespace ZintWrapper
 {
     public partial class MainForm : Form
     {
@@ -28,6 +28,9 @@ namespace ZintTest
             {
                 case "Aztec Code (ISO 24778)":
                     options1.ChangeSymbology(BarcodeTypes.AZTEC);
+                    break;
+                case "Channel Code":
+                    options1.ChangeSymbology(BarcodeTypes.CHANNEL);
                     break;
                 case "Aztec Runes":
                     options1.ChangeSymbology(BarcodeTypes.AZRUNE);

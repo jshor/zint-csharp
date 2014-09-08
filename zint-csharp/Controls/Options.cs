@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ZintTest.Symbologies
+namespace ZintWrapper.Symbologies
 {
     public partial class Options : UserControl
     {
@@ -36,6 +36,9 @@ namespace ZintTest.Symbologies
             {
                 case BarcodeTypes.AZTEC:
                     symbologyOptions = new Aztec(symbology);
+                    break;
+                case BarcodeTypes.CHANNEL:
+                    symbologyOptions = new ChannelCode(symbology);
                     break;
                 default:
                     symbologyOptions = null;

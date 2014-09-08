@@ -1,4 +1,4 @@
-﻿namespace ZintTest.Symbologies
+﻿namespace ZintWrapper.Symbologies
 {
     partial class Options
     {

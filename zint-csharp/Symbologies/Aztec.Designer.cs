@@ -1,4 +1,4 @@
-﻿namespace ZintTest.Symbologies
+﻿namespace ZintWrapper.Symbologies
 {
     partial class Aztec
     {
@@ -36,8 +36,8 @@
             this.gs1DataMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.option2 = new ZintTest.Symbologies.OptionBox();
-            this.option1 = new ZintTest.Symbologies.OptionBox();
+            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option1 = new ZintWrapper.Symbologies.OptionBox();
             this.encodingGroupBox.SuspendLayout();
             this.sizeGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -135,12 +135,12 @@
             this.sizeGroupBox.Controls.Add(this.option2Selected);
             this.sizeGroupBox.Controls.Add(this.autoResize);
             this.sizeGroupBox.Controls.Add(this.option1Selected);
-            this.sizeGroupBox.Location = new System.Drawing.Point(12, 14);
+            this.sizeGroupBox.Location = new System.Drawing.Point(12, 17);
             this.sizeGroupBox.Name = "sizeGroupBox";
-            this.sizeGroupBox.Size = new System.Drawing.Size(403, 116);
+            this.sizeGroupBox.Size = new System.Drawing.Size(403, 113);
             this.sizeGroupBox.TabIndex = 6;
             this.sizeGroupBox.TabStop = false;
-            this.sizeGroupBox.Text = "groupBox1";
+            this.sizeGroupBox.Text = "Symbology size";
             // 
             // option2
             // 
@@ -166,6 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.sizeGroupBox);
             this.Controls.Add(this.encodingGroupBox);
             this.Name = "Aztec";

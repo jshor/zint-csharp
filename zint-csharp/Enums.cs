@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZintTest
+namespace ZintWrapper
 {
     public enum EncodingMode : int { DATA_MODE, UNICODE_MODE, GS1_MODE, KANJI_MODE, SJIS_MODE };
     public enum BarcodeTypes : int

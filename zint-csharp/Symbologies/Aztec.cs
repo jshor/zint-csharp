@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ZintTest.Symbologies
+namespace ZintWrapper.Symbologies
 {
     public partial class Aztec : UserControl, IBarcode
     {

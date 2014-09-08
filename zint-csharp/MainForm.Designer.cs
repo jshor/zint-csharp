@@ -1,4 +1,4 @@
-﻿namespace ZintTest
+﻿namespace ZintWrapper
 {
     partial class MainForm
     {
@@ -33,7 +33,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.options1 = new ZintTest.Symbologies.Options();
+            this.options1 = new ZintWrapper.Symbologies.Options();
             ((System.ComponentModel.ISupportInitialize)(this.symbologyImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,8 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Select barcode...",
             "Aztec Code (ISO 24778)",
-            "Aztec Runes"});
+            "Aztec Runes",
+            "Channel Code"});
             this.comboBox1.Location = new System.Drawing.Point(12, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 21);

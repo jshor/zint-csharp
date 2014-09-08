@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 
-namespace ZintTest
+namespace ZintWrapper
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct zint_symbol
