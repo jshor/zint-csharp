@@ -40,6 +40,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.CHANNEL:
                     symbologyOptions = new ChannelCode(symbology);
                     break;
+                case BarcodeTypes.DATAMATRIX:
+                    symbologyOptions = new DataMatrix(symbology);
+                    break;
                 default:
                     symbologyOptions = null;
                     break;

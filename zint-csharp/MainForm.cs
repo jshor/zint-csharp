@@ -35,6 +35,9 @@ namespace ZintWrapper
                 case "Aztec Runes":
                     options1.ChangeSymbology(BarcodeTypes.AZRUNE);
                     break;
+                case "Data Matrix (ISO 16022)":
+                    options1.ChangeSymbology(BarcodeTypes.DATAMATRIX);
+                    break;
             }
 
             this.symbology = options1.symbology;
