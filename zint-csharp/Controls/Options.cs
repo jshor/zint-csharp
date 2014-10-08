@@ -49,6 +49,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.MAXICODE:
                     symbologyOptions = new MaxiCode(symbology);
                     break;
+                case BarcodeTypes.MICROPDF417:
+                    symbologyOptions = new MicroPDF(symbology);
+                    break;
                 default:
                     symbologyOptions = null;
                     break;

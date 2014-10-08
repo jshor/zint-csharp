@@ -89,7 +89,12 @@
     <Compile Include="Symbologies\MaxiCode.Designer.cs">
       <DependentUpon>MaxiCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\MicroPDF.cs" />
+    <Compile Include="Symbologies\MicroPDF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\MicroPDF.Designer.cs">
+      <DependentUpon>MicroPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\MicroQR.cs" />
     <Compile Include="Symbologies\MSIPlessey.cs" />
     <Compile Include="Controls\OptionBox.cs">
@@ -136,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\MaxiCode.resx">
       <DependentUpon>MaxiCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\MicroPDF.resx">
+      <DependentUpon>MicroPDF.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

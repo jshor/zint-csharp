@@ -44,6 +44,9 @@ namespace ZintWrapper
                 case "Maxicode (ISO 16023)":
                     options1.ChangeSymbology(BarcodeTypes.MAXICODE);
                     break;
+                case "MicroPDF (ISO 24728)":
+                    options1.ChangeSymbology(BarcodeTypes.MICROPDF417);
+                    break;
             }
 
             this.symbology = options1.symbology;
