@@ -43,6 +43,12 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.DATAMATRIX:
                     symbologyOptions = new DataMatrix(symbology);
                     break;
+                case BarcodeTypes.GRIDMATRIX:
+                    symbologyOptions = new GridMatrix(symbology);
+                    break;
+                case BarcodeTypes.MAXICODE:
+                    symbologyOptions = new MaxiCode(symbology);
+                    break;
                 default:
                     symbologyOptions = null;
                     break;

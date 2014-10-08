@@ -38,6 +38,12 @@ namespace ZintWrapper
                 case "Data Matrix (ISO 16022)":
                     options1.ChangeSymbology(BarcodeTypes.DATAMATRIX);
                     break;
+                case "Grid Matrix":
+                    options1.ChangeSymbology(BarcodeTypes.GRIDMATRIX);
+                    break;
+                case "Maxicode (ISO 16023)":
+                    options1.ChangeSymbology(BarcodeTypes.MAXICODE);
+                    break;
             }
 
             this.symbology = options1.symbology;

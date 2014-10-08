@@ -76,9 +76,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Symbologies\Code128.cs" />
-    <Compile Include="Symbologies\GridMatrix.cs" />
+    <Compile Include="Symbologies\GridMatrix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\GridMatrix.Designer.cs">
+      <DependentUpon>GridMatrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\IBarcode.cs" />
-    <Compile Include="Symbologies\MaxiCode.cs" />
+    <Compile Include="Symbologies\MaxiCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\MaxiCode.Designer.cs">
+      <DependentUpon>MaxiCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\MicroPDF.cs" />
     <Compile Include="Symbologies\MicroQR.cs" />
     <Compile Include="Symbologies\MSIPlessey.cs" />
@@ -120,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\ChannelCode.resx">
       <DependentUpon>ChannelCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\GridMatrix.resx">
+      <DependentUpon>GridMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\MaxiCode.resx">
+      <DependentUpon>MaxiCode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
