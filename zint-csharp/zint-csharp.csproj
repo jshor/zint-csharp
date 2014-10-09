@@ -95,7 +95,12 @@
     <Compile Include="Symbologies\MicroPDF.Designer.cs">
       <DependentUpon>MicroPDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\MicroQR.cs" />
+    <Compile Include="Symbologies\MicroQR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\MicroQR.Designer.cs">
+      <DependentUpon>MicroQR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\MSIPlessey.cs" />
     <Compile Include="Controls\OptionBox.cs">
       <SubType>Component</SubType>
@@ -144,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\MicroPDF.resx">
       <DependentUpon>MicroPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\MicroQR.resx">
+      <DependentUpon>MicroQR.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

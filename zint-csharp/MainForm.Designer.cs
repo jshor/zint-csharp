@@ -69,7 +69,8 @@
             "Data Matrix (ISO 16022)",
             "Grid Matrix",
             "Maxicode (ISO 16023)",
-            "MicroPDF (ISO 24728)"});
+            "MicroPDF (ISO 24728)",
+            "Micro QR Code"});
             this.comboBox1.Location = new System.Drawing.Point(12, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 21);

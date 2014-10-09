@@ -47,6 +47,9 @@ namespace ZintWrapper
                 case "MicroPDF (ISO 24728)":
                     options1.ChangeSymbology(BarcodeTypes.MICROPDF417);
                     break;
+                case "Micro QR Code":
+                    options1.ChangeSymbology(BarcodeTypes.MICROQR);
+                    break;
             }
 
             this.symbology = options1.symbology;

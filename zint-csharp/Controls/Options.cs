@@ -52,6 +52,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.MICROPDF417:
                     symbologyOptions = new MicroPDF(symbology);
                     break;
+                case BarcodeTypes.MICROQR:
+                    symbologyOptions = new MicroQR(symbology);
+                    break;
                 default:
                     symbologyOptions = null;
                     break;
