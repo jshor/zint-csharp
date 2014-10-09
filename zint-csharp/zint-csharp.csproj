@@ -112,7 +112,12 @@
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="Symbologies\PDF417.cs" />
-    <Compile Include="Symbologies\QRCode.cs" />
+    <Compile Include="Symbologies\QRCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\QRCode.Designer.cs">
+      <DependentUpon>QRCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbology.cs" />
     <Compile Include="ZBarcode.cs" />
     <Compile Include="zint_symbol.cs" />
@@ -152,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\MicroQR.resx">
       <DependentUpon>MicroQR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\QRCode.resx">
+      <DependentUpon>QRCode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

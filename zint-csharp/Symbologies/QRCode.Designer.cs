@@ -1,6 +1,6 @@
 ﻿namespace ZintWrapper.Symbologies
 {
-    partial class Aztec
+    partial class QRCode
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.sizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.option2Selected = new System.Windows.Forms.RadioButton();
             this.autoResize = new System.Windows.Forms.RadioButton();
             this.option1Selected = new System.Windows.Forms.RadioButton();
-            this.option2Selected = new System.Windows.Forms.RadioButton();
             this.encodingGroupBox = new System.Windows.Forms.GroupBox();
             this.hibcMode = new System.Windows.Forms.RadioButton();
             this.gs1DataMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
-            this.sizeGroupBox = new System.Windows.Forms.GroupBox();
             this.option2 = new ZintWrapper.Symbologies.OptionBox();
             this.option1 = new ZintWrapper.Symbologies.OptionBox();
-            this.encodingGroupBox.SuspendLayout();
             this.sizeGroupBox.SuspendLayout();
+            this.encodingGroupBox.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // sizeGroupBox
+            // 
+            this.sizeGroupBox.Controls.Add(this.option2);
+            this.sizeGroupBox.Controls.Add(this.option1);
+            this.sizeGroupBox.Controls.Add(this.option2Selected);
+            this.sizeGroupBox.Controls.Add(this.autoResize);
+            this.sizeGroupBox.Controls.Add(this.option1Selected);
+            this.sizeGroupBox.Location = new System.Drawing.Point(13, 15);
+            this.sizeGroupBox.Name = "sizeGroupBox";
+            this.sizeGroupBox.Size = new System.Drawing.Size(403, 113);
+            this.sizeGroupBox.TabIndex = 8;
+            this.sizeGroupBox.TabStop = false;
+            this.sizeGroupBox.Text = "Symbology size";
+            // 
+            // option2Selected
+            // 
+            this.option2Selected.AutoSize = true;
+            this.option2Selected.Location = new System.Drawing.Point(20, 77);
+            this.option2Selected.Name = "option2Selected";
+            this.option2Selected.Size = new System.Drawing.Size(90, 17);
+            this.option2Selected.TabIndex = 2;
+            this.option2Selected.TabStop = true;
+            this.option2Selected.Text = "Adjust size to:";
+            this.option2Selected.UseVisualStyleBackColor = true;
+            this.option2Selected.CheckedChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
             // autoResize
             // 
@@ -67,27 +93,15 @@
             this.option1Selected.UseVisualStyleBackColor = true;
             this.option1Selected.CheckedChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
-            // option2Selected
-            // 
-            this.option2Selected.AutoSize = true;
-            this.option2Selected.Location = new System.Drawing.Point(20, 77);
-            this.option2Selected.Name = "option2Selected";
-            this.option2Selected.Size = new System.Drawing.Size(90, 17);
-            this.option2Selected.TabIndex = 2;
-            this.option2Selected.TabStop = true;
-            this.option2Selected.Text = "Adjust size to:";
-            this.option2Selected.UseVisualStyleBackColor = true;
-            this.option2Selected.CheckedChanged += new System.EventHandler(this.optionElement_OptionsChanged);
-            // 
             // encodingGroupBox
             // 
             this.encodingGroupBox.Controls.Add(this.hibcMode);
             this.encodingGroupBox.Controls.Add(this.gs1DataMode);
             this.encodingGroupBox.Controls.Add(this.standardMode);
-            this.encodingGroupBox.Location = new System.Drawing.Point(12, 136);
+            this.encodingGroupBox.Location = new System.Drawing.Point(13, 134);
             this.encodingGroupBox.Name = "encodingGroupBox";
             this.encodingGroupBox.Size = new System.Drawing.Size(403, 93);
-            this.encodingGroupBox.TabIndex = 5;
+            this.encodingGroupBox.TabIndex = 7;
             this.encodingGroupBox.TabStop = false;
             this.encodingGroupBox.Text = "Encoding mode";
             // 
@@ -128,20 +142,6 @@
             this.standardMode.UseVisualStyleBackColor = true;
             this.standardMode.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
             // 
-            // sizeGroupBox
-            // 
-            this.sizeGroupBox.Controls.Add(this.option2);
-            this.sizeGroupBox.Controls.Add(this.option1);
-            this.sizeGroupBox.Controls.Add(this.option2Selected);
-            this.sizeGroupBox.Controls.Add(this.autoResize);
-            this.sizeGroupBox.Controls.Add(this.option1Selected);
-            this.sizeGroupBox.Location = new System.Drawing.Point(12, 17);
-            this.sizeGroupBox.Name = "sizeGroupBox";
-            this.sizeGroupBox.Size = new System.Drawing.Size(403, 113);
-            this.sizeGroupBox.TabIndex = 6;
-            this.sizeGroupBox.TabStop = false;
-            this.sizeGroupBox.Text = "Symbology size";
-            // 
             // option2
             // 
             this.option2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -162,35 +162,34 @@
             this.option1.TabIndex = 3;
             this.option1.SelectedIndexChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
-            // Aztec
+            // QRCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.sizeGroupBox);
             this.Controls.Add(this.encodingGroupBox);
-            this.Name = "Aztec";
+            this.Name = "QRCode";
             this.Size = new System.Drawing.Size(428, 243);
-            this.Load += new System.EventHandler(this.Aztec_Load);
-            this.encodingGroupBox.ResumeLayout(false);
-            this.encodingGroupBox.PerformLayout();
+            this.Load += new System.EventHandler(this.QRCode_Load);
             this.sizeGroupBox.ResumeLayout(false);
             this.sizeGroupBox.PerformLayout();
+            this.encodingGroupBox.ResumeLayout(false);
+            this.encodingGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox sizeGroupBox;
+        private OptionBox option2;
+        private OptionBox option1;
+        private System.Windows.Forms.RadioButton option2Selected;
         private System.Windows.Forms.RadioButton autoResize;
         private System.Windows.Forms.RadioButton option1Selected;
-        private System.Windows.Forms.RadioButton option2Selected;
         private System.Windows.Forms.GroupBox encodingGroupBox;
         private System.Windows.Forms.RadioButton hibcMode;
         private System.Windows.Forms.RadioButton gs1DataMode;
         private System.Windows.Forms.RadioButton standardMode;
-        private System.Windows.Forms.GroupBox sizeGroupBox;
-        private OptionBox option2;
-        private OptionBox option1;
     }
 }

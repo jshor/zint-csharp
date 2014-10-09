@@ -1,15 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace ZintTest.Symbologies
+namespace ZintWrapper.Symbologies
 {
-    class QRCode
+    public partial class QRCode : UserControl, IBarcode
     {
-        public QRCode() { 
-            // security
+        public event EventHandler OptionsChanged;
+        private Symbology symbology;
+
+        public QRCode(Symbology symb)
+        {
+            InitializeComponent();
+
+            this.symbology = symb;
+            this.symbology.Option1 = 0;
+            this.symbology.Option2 = 0;
+            this.symbology.Option3 = 0;
+            this.symbology.InputMode = 0;
+        }
+
+        public Symbology GetSymbology()
+        {
+            return this.symbology;
+        }
+
+        public UserControl GetControl()
+        {
+            return this;
+        }
+
+        private void QRCode_Load(object sender, EventArgs e)
+        {
+            // minimum error correction
             int[] Option1Values = new int[] { 1, 2, 3, 4 };
             String[] Option1 = new String[] { "~20% (Level L)", "~37% (Level H)", "~55% (Level Q)", "~65% (Level H)" };
 
@@ -24,6 +53,67 @@ namespace ZintTest.Symbologies
                 "133 x 133 (Version 29)", "137 x 137 (Version 30)", "141 x 141 (Version 31)", "145 x 145 (Version 32)", "149 x 149 (Version 33)", 
                 "153 x 153 (Version 34)", "157 x 157 (Version 35)", "161 x 161 (Version 36)", "165 x 165 (Version 37)", "169 x 169 (Version 38)", 
                 "173 x 173 (Version 39)", "177 x 177 (Version 40)"};
+
+            option1.PopulateOptions(Option1);
+            option2.PopulateOptions(Option2);
+
+            // default values
+            symbology.Symbol = BarcodeTypes.QRCODE;
+            symbology.InputMode = 0;
+            symbology.Option1 = 0;
+            symbology.Option2 = 0;
+            option1.Enabled = false;
+            option2.Enabled = false;
+        }
+
+        private void optionElement_OptionsChanged(object sender, EventArgs e)
+        {
+            if (option1Selected.Checked)
+            {
+                symbology.Option1 = option1.GetSelectedItemValue();
+                symbology.Option2 = 0;
+                option1.Enabled = true;
+                option2.Enabled = false;
+            }
+            else if (option2Selected.Checked)
+            {
+                symbology.Option2 = option2.GetSelectedItemValue();
+                symbology.Option1 = 0;
+                option1.Enabled = false;
+                option2.Enabled = true;
+            }
+            else
+            {
+                symbology.Option1 = 0;
+                symbology.Option2 = 0;
+                option1.Enabled = false;
+                option2.Enabled = false;
+            }
+                
+
+            if (this.OptionsChanged != null)
+                this.OptionsChanged(new object(), new EventArgs());
+        }
+        private void encodingRadioButton_OptionsChanged(object sender, EventArgs e)
+        {
+            if (gs1DataMode.Checked)
+            {
+                symbology.Symbol = BarcodeTypes.QRCODE;
+                symbology.InputMode = 2;
+            }
+            else if (hibcMode.Checked)
+            {
+                symbology.Symbol = BarcodeTypes.HIBC_QR;
+                symbology.InputMode = 0;
+            }
+            else
+            {
+                symbology.Symbol = BarcodeTypes.QRCODE;
+                symbology.InputMode = 0;
+            }
+
+            if (this.OptionsChanged != null)
+                this.OptionsChanged(new object(), new EventArgs());
         }
     }
 }

@@ -55,6 +55,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.MICROQR:
                     symbologyOptions = new MicroQR(symbology);
                     break;
+                case BarcodeTypes.QRCODE:
+                    symbologyOptions = new QRCode(symbology);
+                    break;
                 default:
                     symbologyOptions = null;
                     break;

@@ -50,6 +50,9 @@ namespace ZintWrapper
                 case "Micro QR Code":
                     options1.ChangeSymbology(BarcodeTypes.MICROQR);
                     break;
+                case "QR Code (ISO 18004)":
+                    options1.ChangeSymbology(BarcodeTypes.QRCODE);
+                    break;
             }
 
             this.symbology = options1.symbology;
