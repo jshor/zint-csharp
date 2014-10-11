@@ -39,6 +39,9 @@ namespace ZintWrapper
                 case "Code 16k":
                     options1.ChangeSymbology(BarcodeTypes.CODE16K);
                     break;
+                case "Code 39 (ISO 16388)":
+                    options1.ChangeSymbology(BarcodeTypes.CODE39);
+                    break;
                 case "Code 128 (ISO 15417)":
                     options1.ChangeSymbology(BarcodeTypes.CODE128);
                     break;

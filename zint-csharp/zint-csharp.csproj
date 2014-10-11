@@ -59,6 +59,12 @@
     <Compile Include="Symbologies\Code128.Designer.cs">
       <DependentUpon>Code128.cs</DependentUpon>
     </Compile>
+    <Compile Include="Symbologies\Code39.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Code39.Designer.cs">
+      <DependentUpon>Code39.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\DataMatrix.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\Code128.resx">
       <DependentUpon>Code128.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\Code39.resx">
+      <DependentUpon>Code39.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\DataMatrix.resx">
       <DependentUpon>DataMatrix.cs</DependentUpon>
