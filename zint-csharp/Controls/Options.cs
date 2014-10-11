@@ -15,6 +15,8 @@ namespace ZintWrapper.Symbologies
         public Symbology symbology;
         private IBarcode symbologyOptions;
         public event EventHandler OptionsChanged;
+        public string DataToEncode;
+
         public Options()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace ZintWrapper.Symbologies
             // remove all tabs except the "appearance" tab
             for (int i = 0; i < generalTab.TabPages.Count; i++ )
             {
-                if (generalTab.TabPages[i] != appearanceTab)
+                if (generalTab.TabPages[i] != appearanceTab && generalTab.TabPages[i] != dataTab)
                 {
                     generalTab.TabPages.Remove(generalTab.TabPages[i]);
                 }
@@ -36,6 +38,9 @@ namespace ZintWrapper.Symbologies
             {
                 case BarcodeTypes.AZTEC:
                     symbologyOptions = new Aztec(symbology);
+                    break;
+                case BarcodeTypes.EANX:
+                    symbologyOptions = new Ean(symbology);
                     break;
                 case BarcodeTypes.CHANNEL:
                     symbologyOptions = new ChannelCode(symbology);
@@ -70,6 +75,19 @@ namespace ZintWrapper.Symbologies
                 optionsTab.Controls.Add(symbologyOptions.GetControl());
                 generalTab.TabPages.Add(optionsTab);
                 symbologyOptions.OptionsChanged += symbologyOptions_OptionsChanged;
+            }
+
+            // show the 2D composite options group box, if applies
+            if (Allows2DComponent(symbol))
+            {
+                add2DComponentGroup.Visible = true;
+            }
+            else
+            {
+                add2DComponent.Checked = false;
+                add2DComponentGroup.Visible = false;
+                componentType.SelectedIndex = 0;
+                secondaryData.Text = "";
             }
 
             symbology.Symbol = symbol;
@@ -120,6 +138,50 @@ namespace ZintWrapper.Symbologies
             return rtn;
         }
 
+        private void data_ValueChanged(object sender, EventArgs e)
+        {
+            if (add2DComponent.Checked)
+            {
+                componentType.Enabled = true;
+                secondaryData.Enabled = true;
+
+                this.DataToEncode = secondaryData.Text;
+                this.symbology.Option1 = (int)componentType.SelectedIndex;
+                symbology.Primary = primaryData.Text;
+
+                symbology.Option1 = 1;
+
+                // attempt to convert to enum with '_CC' appended
+                BarcodeTypes newBarcodeType = this.symbology.Symbol;
+
+                if (Enum.TryParse<BarcodeTypes>(this.symbology.Symbol.ToString() + "_CC", out newBarcodeType))
+                    this.symbology.Symbol = newBarcodeType;
+            }
+            else
+            {
+                componentType.Enabled = false;
+                secondaryData.Enabled = false;
+
+                this.DataToEncode = primaryData.Text;
+                symbology.Primary = "";
+                symbology.InputMode = 0;
+                symbology.Option1 = 0;
+
+                // attempt to convert to enum with '_CC' truncated
+                string oldBarcodeType = this.symbology.Symbol.ToString();
+                BarcodeTypes newBarcodeType = this.symbology.Symbol;
+
+                if (oldBarcodeType.Substring(oldBarcodeType.Length - 3, 3) == "_CC")
+                {
+                    if (Enum.TryParse<BarcodeTypes>(oldBarcodeType.Substring(0, oldBarcodeType.Length-3), out newBarcodeType))
+                        this.symbology.Symbol = newBarcodeType;
+                }
+            }
+
+            Console.WriteLine(this.symbology.Symbol);
+            symbologyOptions_OptionsChanged(sender, e);
+        }
+
         private void height_ValueChanged(object sender, EventArgs e)
         {
             symbology.Height = (int)height.Value;
@@ -143,6 +205,28 @@ namespace ZintWrapper.Symbologies
         private void rotation_ValueChanged(object sender, EventArgs e)
         {
             symbology.Rotation = (int)rotation.Value;
+        }
+
+        private bool Allows2DComponent(BarcodeTypes barcodeType)
+        {
+            bool allowed = false;
+            BarcodeTypes[] compositeCodeTypes = new BarcodeTypes[] {
+                BarcodeTypes.EANX,
+                BarcodeTypes.EAN128,
+                BarcodeTypes.RSS14,
+                BarcodeTypes.RSS_LTD,
+                BarcodeTypes.RSS_EXP,
+                BarcodeTypes.UPCA,
+                BarcodeTypes.UPCE,
+                BarcodeTypes.RSS14STACK,
+                BarcodeTypes.RSS14STACK_OMNI,
+                BarcodeTypes.RSS_EXPSTACK,
+            };
+
+            if (compositeCodeTypes.Contains<BarcodeTypes>(barcodeType))
+                allowed = true;
+
+            return allowed;
         }
     }
 }

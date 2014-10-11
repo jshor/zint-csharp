@@ -65,6 +65,8 @@
             "Select barcode...",
             "Aztec Code (ISO 24778)",
             "Aztec Runes",
+            "European Article Number (EAN)",
+            "Code 128 (ISO 15417)",
             "Channel Code",
             "Data Matrix (ISO 16022)",
             "Grid Matrix",

@@ -11,6 +11,7 @@ namespace ZintWrapper.Symbologies
     {
         Symbology GetSymbology();
         UserControl GetControl();
+
         event EventHandler OptionsChanged;
     }
 }

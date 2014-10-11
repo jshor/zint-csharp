@@ -35,5 +35,6 @@ namespace ZintWrapper
 
         [DllImport("zint.dll", EntryPoint = "ZBarcode_Clear", CallingConvention = CallingConvention.Cdecl)]
         public extern static void Clear(ref zint_symbol symbol);
+
     }
 }

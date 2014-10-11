@@ -24,19 +24,23 @@ namespace ZintWrapper
         {
             symbology = new Symbology();
 
+            // these symbologies require special options tabs
             switch ((String)comboBox1.SelectedItem)
             {
                 case "Aztec Code (ISO 24778)":
                     options1.ChangeSymbology(BarcodeTypes.AZTEC);
                     break;
-                case "Channel Code":
-                    options1.ChangeSymbology(BarcodeTypes.CHANNEL);
-                    break;
                 case "Aztec Runes":
                     options1.ChangeSymbology(BarcodeTypes.AZRUNE);
                     break;
+                case "Channel Code":
+                    options1.ChangeSymbology(BarcodeTypes.CHANNEL);
+                    break;
                 case "Data Matrix (ISO 16022)":
                     options1.ChangeSymbology(BarcodeTypes.DATAMATRIX);
+                    break;
+                case "European Article Number (EAN)":
+                    options1.ChangeSymbology(BarcodeTypes.EANX);
                     break;
                 case "Grid Matrix":
                     options1.ChangeSymbology(BarcodeTypes.GRIDMATRIX);
@@ -63,8 +67,8 @@ namespace ZintWrapper
         {
             if (this.symbology != null)
             {
-                try { 
-                    Image previewImage = symbology.Render((String)symbologyData.Text);
+                try {
+                    Image previewImage = symbology.Render((String)options1.DataToEncode);
 
                     if (previewImage != null)
                     {

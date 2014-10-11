@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Symbologies\Code128.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Code128.Designer.cs">
+      <DependentUpon>Code128.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\DataMatrix.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,7 +81,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Symbologies\Code128.cs" />
+    <Compile Include="Symbologies\Ean.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Ean.Designer.cs">
+      <DependentUpon>Ean.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\GridMatrix.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +145,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Symbologies\Code128.resx">
+      <DependentUpon>Code128.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\DataMatrix.resx">
       <DependentUpon>DataMatrix.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\ChannelCode.resx">
       <DependentUpon>ChannelCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\Ean.resx">
+      <DependentUpon>Ean.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\GridMatrix.resx">
       <DependentUpon>GridMatrix.cs</DependentUpon>

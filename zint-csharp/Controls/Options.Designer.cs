@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.generalTab = new System.Windows.Forms.TabControl();
+            this.dataTab = new System.Windows.Forms.TabPage();
+            this.componentTypeLabel = new System.Windows.Forms.Label();
+            this.primaryDataLabel = new System.Windows.Forms.Label();
+            this.secondaryDataLabel = new System.Windows.Forms.Label();
+            this.componentType = new System.Windows.Forms.ComboBox();
+            this.add2DComponent = new System.Windows.Forms.CheckBox();
+            this.secondaryData = new System.Windows.Forms.TextBox();
+            this.primaryData = new System.Windows.Forms.TextBox();
             this.appearanceTab = new System.Windows.Forms.TabPage();
             this.rotationLabel = new System.Windows.Forms.Label();
             this.rotation = new System.Windows.Forms.NumericUpDown();
@@ -46,23 +54,110 @@
             this.borderWidthLabel = new System.Windows.Forms.Label();
             this.heightLabel = new System.Windows.Forms.Label();
             this.height = new System.Windows.Forms.NumericUpDown();
+            this.add2DComponentGroup = new System.Windows.Forms.GroupBox();
             this.generalTab.SuspendLayout();
+            this.dataTab.SuspendLayout();
             this.appearanceTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.whitespace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).BeginInit();
+            this.add2DComponentGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // generalTab
             // 
+            this.generalTab.Controls.Add(this.dataTab);
             this.generalTab.Controls.Add(this.appearanceTab);
             this.generalTab.Location = new System.Drawing.Point(0, 3);
             this.generalTab.Name = "generalTab";
             this.generalTab.SelectedIndex = 0;
             this.generalTab.Size = new System.Drawing.Size(431, 267);
             this.generalTab.TabIndex = 0;
+            // 
+            // dataTab
+            // 
+            this.dataTab.Controls.Add(this.add2DComponentGroup);
+            this.dataTab.Controls.Add(this.primaryDataLabel);
+            this.dataTab.Controls.Add(this.primaryData);
+            this.dataTab.Location = new System.Drawing.Point(4, 22);
+            this.dataTab.Name = "dataTab";
+            this.dataTab.Padding = new System.Windows.Forms.Padding(3);
+            this.dataTab.Size = new System.Drawing.Size(423, 241);
+            this.dataTab.TabIndex = 1;
+            this.dataTab.Text = "tabPage1";
+            this.dataTab.UseVisualStyleBackColor = true;
+            // 
+            // componentTypeLabel
+            // 
+            this.componentTypeLabel.AutoSize = true;
+            this.componentTypeLabel.Location = new System.Drawing.Point(274, 33);
+            this.componentTypeLabel.Name = "componentTypeLabel";
+            this.componentTypeLabel.Size = new System.Drawing.Size(87, 13);
+            this.componentTypeLabel.TabIndex = 6;
+            this.componentTypeLabel.Text = "Component type:";
+            // 
+            // primaryDataLabel
+            // 
+            this.primaryDataLabel.AutoSize = true;
+            this.primaryDataLabel.Location = new System.Drawing.Point(19, 23);
+            this.primaryDataLabel.Name = "primaryDataLabel";
+            this.primaryDataLabel.Size = new System.Drawing.Size(68, 13);
+            this.primaryDataLabel.TabIndex = 5;
+            this.primaryDataLabel.Text = "Primary data:";
+            // 
+            // secondaryDataLabel
+            // 
+            this.secondaryDataLabel.AutoSize = true;
+            this.secondaryDataLabel.Location = new System.Drawing.Point(13, 76);
+            this.secondaryDataLabel.Name = "secondaryDataLabel";
+            this.secondaryDataLabel.Size = new System.Drawing.Size(104, 13);
+            this.secondaryDataLabel.TabIndex = 4;
+            this.secondaryDataLabel.Text = "2D component data:";
+            // 
+            // componentType
+            // 
+            this.componentType.Enabled = false;
+            this.componentType.FormattingEnabled = true;
+            this.componentType.Items.AddRange(new object[] {
+            "Automatic",
+            "CC_A",
+            "CC_B",
+            "CC_C"});
+            this.componentType.Location = new System.Drawing.Point(277, 49);
+            this.componentType.Name = "componentType";
+            this.componentType.Size = new System.Drawing.Size(121, 21);
+            this.componentType.TabIndex = 3;
+            this.componentType.SelectedIndexChanged += new System.EventHandler(this.data_ValueChanged);
+            // 
+            // add2DComponent
+            // 
+            this.add2DComponent.AutoSize = true;
+            this.add2DComponent.Location = new System.Drawing.Point(16, 40);
+            this.add2DComponent.Name = "add2DComponent";
+            this.add2DComponent.Size = new System.Drawing.Size(118, 17);
+            this.add2DComponent.TabIndex = 2;
+            this.add2DComponent.Text = "Add 2D component";
+            this.add2DComponent.UseVisualStyleBackColor = true;
+            this.add2DComponent.CheckedChanged += new System.EventHandler(this.data_ValueChanged);
+            // 
+            // secondaryData
+            // 
+            this.secondaryData.Enabled = false;
+            this.secondaryData.Location = new System.Drawing.Point(16, 98);
+            this.secondaryData.Name = "secondaryData";
+            this.secondaryData.Size = new System.Drawing.Size(382, 20);
+            this.secondaryData.TabIndex = 1;
+            this.secondaryData.TextChanged += new System.EventHandler(this.data_ValueChanged);
+            // 
+            // primaryData
+            // 
+            this.primaryData.Location = new System.Drawing.Point(22, 43);
+            this.primaryData.Name = "primaryData";
+            this.primaryData.Size = new System.Drawing.Size(382, 20);
+            this.primaryData.TabIndex = 0;
+            this.primaryData.TextChanged += new System.EventHandler(this.data_ValueChanged);
             // 
             // appearanceTab
             // 
@@ -231,6 +326,20 @@
             this.height.TabIndex = 0;
             this.height.ValueChanged += new System.EventHandler(this.height_ValueChanged);
             // 
+            // add2DComponentGroup
+            // 
+            this.add2DComponentGroup.Controls.Add(this.add2DComponent);
+            this.add2DComponentGroup.Controls.Add(this.componentTypeLabel);
+            this.add2DComponentGroup.Controls.Add(this.secondaryData);
+            this.add2DComponentGroup.Controls.Add(this.secondaryDataLabel);
+            this.add2DComponentGroup.Controls.Add(this.componentType);
+            this.add2DComponentGroup.Location = new System.Drawing.Point(6, 84);
+            this.add2DComponentGroup.Name = "add2DComponentGroup";
+            this.add2DComponentGroup.Size = new System.Drawing.Size(411, 151);
+            this.add2DComponentGroup.TabIndex = 7;
+            this.add2DComponentGroup.TabStop = false;
+            this.add2DComponentGroup.Text = "groupBox1";
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +348,8 @@
             this.Name = "Options";
             this.Size = new System.Drawing.Size(434, 273);
             this.generalTab.ResumeLayout(false);
+            this.dataTab.ResumeLayout(false);
+            this.dataTab.PerformLayout();
             this.appearanceTab.ResumeLayout(false);
             this.appearanceTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotation)).EndInit();
@@ -246,6 +357,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.whitespace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).EndInit();
+            this.add2DComponentGroup.ResumeLayout(false);
+            this.add2DComponentGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,5 +383,14 @@
         private System.Windows.Forms.Button backgroundColor;
         private System.Windows.Forms.Label rotationLabel;
         private System.Windows.Forms.NumericUpDown rotation;
+        private System.Windows.Forms.TabPage dataTab;
+        private System.Windows.Forms.Label componentTypeLabel;
+        private System.Windows.Forms.Label primaryDataLabel;
+        private System.Windows.Forms.Label secondaryDataLabel;
+        private System.Windows.Forms.ComboBox componentType;
+        private System.Windows.Forms.CheckBox add2DComponent;
+        private System.Windows.Forms.TextBox secondaryData;
+        private System.Windows.Forms.TextBox primaryData;
+        private System.Windows.Forms.GroupBox add2DComponentGroup;
     }
 }
