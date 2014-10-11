@@ -20,62 +20,12 @@ namespace ZintWrapper
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void barcodeList_SelectedIndexChanged(object sender, EventArgs e)
         {
             symbology = new Symbology();
 
-            // these symbologies require special options tabs
-            switch ((String)comboBox1.SelectedItem)
-            {
-                case "Aztec Code (ISO 24778)":
-                    options1.ChangeSymbology(BarcodeTypes.AZTEC);
-                    break;
-                case "Aztec Runes":
-                    options1.ChangeSymbology(BarcodeTypes.AZRUNE);
-                    break;
-                case "Channel Code":
-                    options1.ChangeSymbology(BarcodeTypes.CHANNEL);
-                    break;
-                case "Code 128 (ISO 15417)":
-                    options1.ChangeSymbology(BarcodeTypes.CODE128);
-                    break;
-                case "Code 16k":
-                    options1.ChangeSymbology(BarcodeTypes.CODE16K);
-                    break;
-                case "Code 39 (ISO 16388)":
-                    options1.ChangeSymbology(BarcodeTypes.CODE39);
-                    break;
-                case "Code 39 Extended":
-                    options1.ChangeSymbology(BarcodeTypes.EXCODE39);
-                    break;
-                case "Code 49":
-                    options1.ChangeSymbology(BarcodeTypes.CODE49);
-                    break;
-                case "Code One":
-                    options1.ChangeSymbology(BarcodeTypes.CODEONE);
-                    break;
-                case "Data Matrix (ISO 16022)":
-                    options1.ChangeSymbology(BarcodeTypes.DATAMATRIX);
-                    break;
-                case "European Article Number (EAN)":
-                    options1.ChangeSymbology(BarcodeTypes.EANX);
-                    break;
-                case "Grid Matrix":
-                    options1.ChangeSymbology(BarcodeTypes.GRIDMATRIX);
-                    break;
-                case "Maxicode (ISO 16023)":
-                    options1.ChangeSymbology(BarcodeTypes.MAXICODE);
-                    break;
-                case "MicroPDF (ISO 24728)":
-                    options1.ChangeSymbology(BarcodeTypes.MICROPDF417);
-                    break;
-                case "Micro QR Code":
-                    options1.ChangeSymbology(BarcodeTypes.MICROQR);
-                    break;
-                case "QR Code (ISO 18004)":
-                    options1.ChangeSymbology(BarcodeTypes.QRCODE);
-                    break;
-            }
+            if (barcodeList.GetSelectedBarcode() != BarcodeTypes.NONE)
+                options1.ChangeSymbology(barcodeList.GetSelectedBarcode());
 
             this.symbology = options1.symbology;
             options_OptionsChanged(sender, e);
@@ -103,7 +53,19 @@ namespace ZintWrapper
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            symbologyImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            // these symbologies require special options tabs
+            BarcodeTypes[] symbologyValuesList = new BarcodeTypes[] {
+                BarcodeTypes.AZTEC, BarcodeTypes.AZRUNE, BarcodeTypes.CHANNEL, BarcodeTypes.CODE128, BarcodeTypes.CODE16K, BarcodeTypes.CODE39, BarcodeTypes.EXCODE39,
+                BarcodeTypes.CODE49, BarcodeTypes.CODEONE, BarcodeTypes.DATAMATRIX, BarcodeTypes.EANX, BarcodeTypes.GRIDMATRIX, BarcodeTypes.MAXICODE,
+                BarcodeTypes.MICROPDF417,  BarcodeTypes.MICROQR, BarcodeTypes.QRCODE
+            };
+
+            String[] symbologyList = new String[] {"Aztec Code (ISO 24778)", "Aztec Runes", "Channel Code", "Code 128 (ISO 15417)", "Code 16k", "Code 39 (ISO 16388)",
+                "Code 39 Extended", "Code 49", "Code One", "Data Matrix (ISO 16022)", "European Article Number (EAN)", "Grid Matrix", "Maxicode (ISO 16023)",
+                "MicroPDF (ISO 24728)", "Micro QR Code", "QR Code (ISO 18004)"
+            };
+
+            barcodeList.PopulateOptions(symbologyValuesList, symbologyList);
         }
     }
 }

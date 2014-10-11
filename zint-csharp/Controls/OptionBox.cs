@@ -10,6 +10,7 @@ namespace ZintWrapper.Symbologies
     public class OptionBox : ComboBox
     {
         private int[] optionValues;
+        private BarcodeTypes[] optionBarcodeValues;
         private String[] options;
 
         public OptionBox()
@@ -29,6 +30,18 @@ namespace ZintWrapper.Symbologies
             this.SelectedIndex = 0;
         }
 
+        public void PopulateOptions(BarcodeTypes[] optionVals, String[] opts)
+        {
+            for (int i = 0; i < opts.Length; i++)
+            {
+                this.Items.Add(opts[i]);
+            }
+
+            this.optionBarcodeValues = optionVals;
+            this.options = opts;
+            this.SelectedIndex = 0;
+        }
+
         public void PopulateOptions(String[] opts)
         {
             // for options with sequential integer values
@@ -40,6 +53,19 @@ namespace ZintWrapper.Symbologies
             }
 
             PopulateOptions(optionVals, opts);
+        }
+
+        public BarcodeTypes GetSelectedBarcode()
+        {
+            for (int i = 0; i < this.Items.Count; i++)
+            {
+                if ((String)this.SelectedItem == this.options[i])
+                    return optionBarcodeValues[i];
+            }
+
+            Console.WriteLine("should not return");
+
+            return BarcodeTypes.NONE;
         }
 
         public int GetSelectedItemValue()

@@ -9,6 +9,7 @@ namespace ZintWrapper
     public enum EncodingMode : int { DATA_MODE, UNICODE_MODE, GS1_MODE, KANJI_MODE, SJIS_MODE };
     public enum BarcodeTypes : int
     {
+        NONE = 0,
         CODE11 = 1,
         C25MATRIX = 2,
         C25INTER = 3,
