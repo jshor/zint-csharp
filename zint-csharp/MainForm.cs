@@ -42,6 +42,9 @@ namespace ZintWrapper
                 case "Code 39 (ISO 16388)":
                     options1.ChangeSymbology(BarcodeTypes.CODE39);
                     break;
+                case "Code 39 Extended":
+                    options1.ChangeSymbology(BarcodeTypes.EXCODE39);
+                    break;
                 case "Code 128 (ISO 15417)":
                     options1.ChangeSymbology(BarcodeTypes.CODE128);
                     break;

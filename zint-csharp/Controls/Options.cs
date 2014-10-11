@@ -48,6 +48,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.CODE39:
                     symbologyOptions = new Code39(symbology);
                     break;
+                case BarcodeTypes.EXCODE39:
+                    symbologyOptions = new Code39Ext(symbology);
+                    break;
                 case BarcodeTypes.CODE128:
                     symbologyOptions = new Code128(symbology);
                     break;
