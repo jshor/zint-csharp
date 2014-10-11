@@ -30,5 +30,18 @@ namespace ZintWrapper.Symbologies
         {
             return this;
         }
+
+        private void encodingRadioButton_OptionsChanged(object sender, EventArgs e)
+        {
+            if (hibc128.Checked)
+                this.symbology.Symbol = BarcodeTypes.HIBC_128;
+            else if (subsetCSuppression.Checked)
+                this.symbology.Symbol = BarcodeTypes.CODE128B;
+            else
+                this.symbology.Symbol = BarcodeTypes.CODE128;
+
+            if (this.OptionsChanged != null)
+                this.OptionsChanged(new object(), new EventArgs());
+        }
     }
 }

@@ -39,9 +39,6 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.AZTEC:
                     symbologyOptions = new Aztec(symbology);
                     break;
-                case BarcodeTypes.EANX:
-                    symbologyOptions = new Ean(symbology);
-                    break;
                 case BarcodeTypes.CHANNEL:
                     symbologyOptions = new ChannelCode(symbology);
                     break;

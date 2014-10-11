@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.symbologyImage = new System.Windows.Forms.PictureBox();
-            this.symbologyData = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,14 +48,6 @@
             this.symbologyImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.symbologyImage.TabIndex = 1;
             this.symbologyImage.TabStop = false;
-            // 
-            // symbologyData
-            // 
-            this.symbologyData.Location = new System.Drawing.Point(12, 254);
-            this.symbologyData.Name = "symbologyData";
-            this.symbologyData.Size = new System.Drawing.Size(261, 20);
-            this.symbologyData.TabIndex = 2;
-            this.symbologyData.TextChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
             // comboBox1
             // 
@@ -115,21 +106,18 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.symbologyData);
             this.Controls.Add(this.symbologyImage);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.symbologyImage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox symbologyImage;
-        private System.Windows.Forms.TextBox symbologyData;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
