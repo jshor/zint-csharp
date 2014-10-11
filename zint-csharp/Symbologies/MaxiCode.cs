@@ -51,6 +51,17 @@ namespace ZintWrapper.Symbologies
         {
             symbology.Option1 = option1.GetSelectedItemValue();
 
+            if (option1.GetSelectedItemValue() == 3)
+            {
+                primaryText.Enabled = true;
+                symbology.Primary = primaryText.Text;
+            }
+            else
+            {
+                primaryText.Enabled = false;
+                symbology.Primary = null;
+            }
+
             if (this.OptionsChanged != null)
                 this.OptionsChanged(new object(), new EventArgs());
         }

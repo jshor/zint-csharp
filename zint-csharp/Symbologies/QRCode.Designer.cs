@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option1 = new ZintWrapper.Symbologies.OptionBox();
             this.option2Selected = new System.Windows.Forms.RadioButton();
             this.autoResize = new System.Windows.Forms.RadioButton();
             this.option1Selected = new System.Windows.Forms.RadioButton();
@@ -36,8 +38,6 @@
             this.hibcMode = new System.Windows.Forms.RadioButton();
             this.gs1DataMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
-            this.option1 = new ZintWrapper.Symbologies.OptionBox();
             this.sizeGroupBox.SuspendLayout();
             this.encodingGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,26 @@
             this.sizeGroupBox.TabIndex = 8;
             this.sizeGroupBox.TabStop = false;
             this.sizeGroupBox.Text = "Symbology size";
+            // 
+            // option2
+            // 
+            this.option2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.option2.FormattingEnabled = true;
+            this.option2.Location = new System.Drawing.Point(190, 77);
+            this.option2.Name = "option2";
+            this.option2.Size = new System.Drawing.Size(195, 21);
+            this.option2.TabIndex = 4;
+            this.option2.SelectedIndexChanged += new System.EventHandler(this.optionElement_OptionsChanged);
+            // 
+            // option1
+            // 
+            this.option1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.option1.FormattingEnabled = true;
+            this.option1.Location = new System.Drawing.Point(190, 43);
+            this.option1.Name = "option1";
+            this.option1.Size = new System.Drawing.Size(195, 21);
+            this.option1.TabIndex = 3;
+            this.option1.SelectedIndexChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
             // option2Selected
             // 
@@ -110,10 +130,10 @@
             this.hibcMode.AutoSize = true;
             this.hibcMode.Location = new System.Drawing.Point(20, 58);
             this.hibcMode.Name = "hibcMode";
-            this.hibcMode.Size = new System.Drawing.Size(109, 17);
+            this.hibcMode.Size = new System.Drawing.Size(97, 17);
             this.hibcMode.TabIndex = 8;
             this.hibcMode.TabStop = true;
-            this.hibcMode.Text = "HIBC Aztec mode";
+            this.hibcMode.Text = "HIBC QR Code";
             this.hibcMode.UseVisualStyleBackColor = true;
             this.hibcMode.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
             // 
@@ -141,26 +161,6 @@
             this.standardMode.Text = "Standard mode";
             this.standardMode.UseVisualStyleBackColor = true;
             this.standardMode.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
-            // 
-            // option2
-            // 
-            this.option2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.option2.FormattingEnabled = true;
-            this.option2.Location = new System.Drawing.Point(190, 77);
-            this.option2.Name = "option2";
-            this.option2.Size = new System.Drawing.Size(195, 21);
-            this.option2.TabIndex = 4;
-            this.option2.SelectedIndexChanged += new System.EventHandler(this.optionElement_OptionsChanged);
-            // 
-            // option1
-            // 
-            this.option1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.option1.FormattingEnabled = true;
-            this.option1.Location = new System.Drawing.Point(190, 43);
-            this.option1.Name = "option1";
-            this.option1.Size = new System.Drawing.Size(195, 21);
-            this.option1.TabIndex = 3;
-            this.option1.SelectedIndexChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
             // QRCode
             // 

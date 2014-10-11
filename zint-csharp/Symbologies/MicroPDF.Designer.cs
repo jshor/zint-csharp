@@ -31,9 +31,9 @@
             this.option2Label = new System.Windows.Forms.Label();
             this.stdRadio = new System.Windows.Forms.RadioButton();
             this.hibcRadio = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.encodingModeGroup = new System.Windows.Forms.GroupBox();
             this.option2 = new ZintWrapper.Symbologies.OptionBox();
-            this.groupBox1.SuspendLayout();
+            this.encodingModeGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // option2Label
@@ -48,37 +48,37 @@
             // stdRadio
             // 
             this.stdRadio.AutoSize = true;
-            this.stdRadio.Location = new System.Drawing.Point(21, 34);
+            this.stdRadio.Location = new System.Drawing.Point(25, 34);
             this.stdRadio.Name = "stdRadio";
-            this.stdRadio.Size = new System.Drawing.Size(67, 17);
+            this.stdRadio.Size = new System.Drawing.Size(68, 17);
             this.stdRadio.TabIndex = 2;
             this.stdRadio.TabStop = true;
-            this.stdRadio.Text = "stdRadio";
+            this.stdRadio.Text = "Standard";
             this.stdRadio.UseVisualStyleBackColor = true;
             this.stdRadio.CheckedChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
             // hibcRadio
             // 
             this.hibcRadio.AutoSize = true;
-            this.hibcRadio.Location = new System.Drawing.Point(38, 57);
+            this.hibcRadio.Location = new System.Drawing.Point(220, 34);
             this.hibcRadio.Name = "hibcRadio";
-            this.hibcRadio.Size = new System.Drawing.Size(73, 17);
+            this.hibcRadio.Size = new System.Drawing.Size(100, 17);
             this.hibcRadio.TabIndex = 3;
             this.hibcRadio.TabStop = true;
-            this.hibcRadio.Text = "hibcRadio";
+            this.hibcRadio.Text = "HIBC MicroPDF";
             this.hibcRadio.UseVisualStyleBackColor = true;
             this.hibcRadio.CheckedChanged += new System.EventHandler(this.optionElement_OptionsChanged);
             // 
-            // groupBox1
+            // encodingModeGroup
             // 
-            this.groupBox1.Controls.Add(this.hibcRadio);
-            this.groupBox1.Controls.Add(this.stdRadio);
-            this.groupBox1.Location = new System.Drawing.Point(19, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 164);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.encodingModeGroup.Controls.Add(this.hibcRadio);
+            this.encodingModeGroup.Controls.Add(this.stdRadio);
+            this.encodingModeGroup.Location = new System.Drawing.Point(18, 59);
+            this.encodingModeGroup.Name = "encodingModeGroup";
+            this.encodingModeGroup.Size = new System.Drawing.Size(390, 78);
+            this.encodingModeGroup.TabIndex = 4;
+            this.encodingModeGroup.TabStop = false;
+            this.encodingModeGroup.Text = "Encoding mode";
             // 
             // option2
             // 
@@ -94,14 +94,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.encodingModeGroup);
             this.Controls.Add(this.option2Label);
             this.Controls.Add(this.option2);
             this.Name = "MicroPDF";
             this.Size = new System.Drawing.Size(428, 243);
             this.Load += new System.EventHandler(this.MicroPDF_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.encodingModeGroup.ResumeLayout(false);
+            this.encodingModeGroup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +113,6 @@
         private System.Windows.Forms.Label option2Label;
         private System.Windows.Forms.RadioButton stdRadio;
         private System.Windows.Forms.RadioButton hibcRadio;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox encodingModeGroup;
     }
 }

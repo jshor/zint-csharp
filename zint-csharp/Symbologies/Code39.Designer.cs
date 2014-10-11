@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.encodingOptions = new System.Windows.Forms.GroupBox();
+            this.hibc39 = new System.Windows.Forms.RadioButton();
             this.mod43ChkDigit = new System.Windows.Forms.RadioButton();
             this.stdRadio = new System.Windows.Forms.RadioButton();
-            this.hibc39 = new System.Windows.Forms.RadioButton();
             this.encodingOptions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +47,25 @@
             this.encodingOptions.TabStop = false;
             this.encodingOptions.Text = "Encoding options";
             // 
+            // hibc39
+            // 
+            this.hibc39.AutoSize = true;
+            this.hibc39.Location = new System.Drawing.Point(26, 74);
+            this.hibc39.Name = "hibc39";
+            this.hibc39.Size = new System.Drawing.Size(65, 17);
+            this.hibc39.TabIndex = 3;
+            this.hibc39.Text = "HIBC 39";
+            this.hibc39.UseVisualStyleBackColor = true;
+            this.hibc39.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
+            // 
             // mod43ChkDigit
             // 
             this.mod43ChkDigit.AutoSize = true;
             this.mod43ChkDigit.Location = new System.Drawing.Point(248, 33);
             this.mod43ChkDigit.Name = "mod43ChkDigit";
-            this.mod43ChkDigit.Size = new System.Drawing.Size(97, 17);
+            this.mod43ChkDigit.Size = new System.Drawing.Size(116, 17);
             this.mod43ChkDigit.TabIndex = 2;
-            this.mod43ChkDigit.Text = "mod43ChkDigit";
+            this.mod43ChkDigit.Text = "Mod-43 check digit";
             this.mod43ChkDigit.UseVisualStyleBackColor = true;
             this.mod43ChkDigit.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
             // 
@@ -70,17 +81,6 @@
             this.stdRadio.Text = "Standard";
             this.stdRadio.UseVisualStyleBackColor = true;
             this.stdRadio.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
-            // 
-            // hibc39
-            // 
-            this.hibc39.AutoSize = true;
-            this.hibc39.Location = new System.Drawing.Point(26, 74);
-            this.hibc39.Name = "hibc39";
-            this.hibc39.Size = new System.Drawing.Size(65, 17);
-            this.hibc39.TabIndex = 3;
-            this.hibc39.Text = "HIBC 39";
-            this.hibc39.UseVisualStyleBackColor = true;
-            this.hibc39.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
             // 
             // Code39
             // 

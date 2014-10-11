@@ -63,9 +63,9 @@
             this.mod43ChkDigit.AutoSize = true;
             this.mod43ChkDigit.Location = new System.Drawing.Point(248, 33);
             this.mod43ChkDigit.Name = "mod43ChkDigit";
-            this.mod43ChkDigit.Size = new System.Drawing.Size(97, 17);
+            this.mod43ChkDigit.Size = new System.Drawing.Size(116, 17);
             this.mod43ChkDigit.TabIndex = 2;
-            this.mod43ChkDigit.Text = "mod43ChkDigit";
+            this.mod43ChkDigit.Text = "Mod-43 check digit";
             this.mod43ChkDigit.UseVisualStyleBackColor = true;
             this.mod43ChkDigit.CheckedChanged += new System.EventHandler(this.encodingRadioButton_OptionsChanged);
             // 
