@@ -61,6 +61,7 @@
             "Code 16k",
             "Code 39 (ISO 16388)",
             "Code 39 Extended",
+            "Code 49",
             "Channel Code",
             "Data Matrix (ISO 16022)",
             "Grid Matrix",

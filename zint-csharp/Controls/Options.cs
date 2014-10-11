@@ -42,6 +42,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.CHANNEL:
                     symbologyOptions = new ChannelCode(symbology);
                     break;
+                case BarcodeTypes.CODE128:
+                    symbologyOptions = new Code128(symbology);
+                    break;
                 case BarcodeTypes.CODE16K:
                     symbologyOptions = new Code16k(symbology);
                     break;
@@ -51,8 +54,8 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.EXCODE39:
                     symbologyOptions = new Code39Ext(symbology);
                     break;
-                case BarcodeTypes.CODE128:
-                    symbologyOptions = new Code128(symbology);
+                case BarcodeTypes.CODE49:
+                    symbologyOptions = new Code49(symbology);
                     break;
                 case BarcodeTypes.DATAMATRIX:
                     symbologyOptions = new DataMatrix(symbology);
