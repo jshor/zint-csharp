@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Symbologies\Code16k.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\Code16k.Designer.cs">
+      <DependentUpon>Code16k.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\Code128.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,7 +77,6 @@
     <Compile Include="Symbologies\ChannelCode.Designer.cs">
       <DependentUpon>ChannelCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\DatabarExpStacked.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -139,6 +144,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Symbologies\Code16k.resx">
+      <DependentUpon>Code16k.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\Code128.resx">
       <DependentUpon>Code128.cs</DependentUpon>
     </EmbeddedResource>

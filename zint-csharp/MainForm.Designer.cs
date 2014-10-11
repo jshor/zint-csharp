@@ -58,6 +58,7 @@
             "Aztec Runes",
             "European Article Number (EAN)",
             "Code 128 (ISO 15417)",
+            "Code 16k",
             "Channel Code",
             "Data Matrix (ISO 16022)",
             "Grid Matrix",
