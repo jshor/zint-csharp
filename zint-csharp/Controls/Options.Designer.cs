@@ -129,6 +129,7 @@
             this.componentType.Name = "componentType";
             this.componentType.Size = new System.Drawing.Size(121, 21);
             this.componentType.TabIndex = 3;
+            this.componentType.SelectedIndex = 0;
             this.componentType.SelectedIndexChanged += new System.EventHandler(this.data_ValueChanged);
             // 
             // add2DComponent

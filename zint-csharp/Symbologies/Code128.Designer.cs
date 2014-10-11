@@ -36,7 +36,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Code128";
             this.Size = new System.Drawing.Size(428, 243);
-            this.Load += new System.EventHandler(this.Code128_Load);
             this.ResumeLayout(false);
 
         }

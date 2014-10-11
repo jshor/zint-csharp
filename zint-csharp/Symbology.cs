@@ -333,7 +333,8 @@ namespace ZintWrapper
         {
             Bitmap bitmap = null;
 
-            try {
+            try
+            {
                 if (ZBarcode.EncodeAndBuffer(ref SymbolStruct, str, str.Length, this.Rotation) == 0)
                 {
                     // no error returned, create barcode preview
@@ -361,6 +362,10 @@ namespace ZintWrapper
 
                     // reset bitmap
                     ZBarcode.Clear(ref SymbolStruct);
+
+                    // ZBarcode.Clear() does not do this correctly in DLL, requires doing it manually...
+                    SymbolStruct.row_height = null;
+                    SymbolStruct.height = 0;
                 }
                 else
                 {

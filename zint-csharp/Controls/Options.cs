@@ -45,6 +45,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.CHANNEL:
                     symbologyOptions = new ChannelCode(symbology);
                     break;
+                case BarcodeTypes.CODE128:
+                    symbologyOptions = new Code128(symbology);
+                    break;
                 case BarcodeTypes.DATAMATRIX:
                     symbologyOptions = new DataMatrix(symbology);
                     break;
@@ -146,10 +149,8 @@ namespace ZintWrapper.Symbologies
                 secondaryData.Enabled = true;
 
                 this.DataToEncode = secondaryData.Text;
-                this.symbology.Option1 = (int)componentType.SelectedIndex;
+                this.symbology.Option1 = componentType.SelectedIndex;
                 symbology.Primary = primaryData.Text;
-
-                symbology.Option1 = 1;
 
                 // attempt to convert to enum with '_CC' appended
                 BarcodeTypes newBarcodeType = this.symbology.Symbol;
@@ -164,8 +165,6 @@ namespace ZintWrapper.Symbologies
 
                 this.DataToEncode = primaryData.Text;
                 symbology.Primary = "";
-                symbology.InputMode = 0;
-                symbology.Option1 = 0;
 
                 // attempt to convert to enum with '_CC' truncated
                 string oldBarcodeType = this.symbology.Symbol.ToString();
