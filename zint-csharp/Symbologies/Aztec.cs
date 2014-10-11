@@ -51,6 +51,8 @@ namespace ZintWrapper.Symbologies
 
             option1.PopulateOptions(Option1);
             option2.PopulateOptions(Option2);
+            option1.SelectedIndex = 0;
+            option2.SelectedIndex = 0;
 
             // default values
             symbology.Symbol = BarcodeTypes.AZTEC;

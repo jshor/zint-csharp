@@ -32,6 +32,7 @@ namespace ZintWrapper.Symbologies
             String[] Option2 = new String[] { "Automatic", "1", "2", "3", "4" };
 
             option2.PopulateOptions(Option2Value, Option2);
+            option2.SelectedIndex = 0;
         }
 
         public Symbology GetSymbology()

@@ -42,6 +42,8 @@ namespace ZintWrapper.Symbologies
             String[] Option1 = new String[] { "Standard Symbol, SEC (Mode 4)", "Structured Carrier Message (Mode 2 or 3)", "Full ECC Symbol (Mode 5)", "Reader Program, SEC (Mode 6)" };
 
             option1.PopulateOptions(Option1Values, Option1);
+            option1.SelectedIndex = 0;
+
             this.symbology.Symbol = BarcodeTypes.MAXICODE;
         }
 

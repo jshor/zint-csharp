@@ -57,6 +57,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.CODE49:
                     symbologyOptions = new Code49(symbology);
                     break;
+                case BarcodeTypes.CODEONE:
+                    symbologyOptions = new CodeOne(symbology);
+                    break;
                 case BarcodeTypes.DATAMATRIX:
                     symbologyOptions = new DataMatrix(symbology);
                     break;

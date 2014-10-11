@@ -45,6 +45,7 @@ namespace ZintWrapper.Symbologies
                 "12 x 26", "12 x 36", "16 x 36", "16 x 48" };
 
             option2.PopulateOptions(Option2);
+            option2.SelectedIndex = 0;
 
             // default values
             symbology.Symbol = BarcodeTypes.DATAMATRIX;
