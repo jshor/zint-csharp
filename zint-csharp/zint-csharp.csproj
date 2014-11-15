@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Symbologies\MSIPlessey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\MSIPlessey.Designer.cs">
+      <DependentUpon>MSIPlessey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Symbologies\Code16k.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,7 +141,6 @@
     <Compile Include="Symbologies\MicroQR.Designer.cs">
       <DependentUpon>MicroQR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\MSIPlessey.cs" />
     <Compile Include="Controls\OptionBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -151,7 +156,6 @@
     <Compile Include="Symbologies\PDF417.Designer.cs">
       <DependentUpon>PDF417.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\PDF417Old.cs" />
     <Compile Include="Symbologies\QRCode.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,6 +178,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Symbologies\MSIPlessey.resx">
+      <DependentUpon>MSIPlessey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\Code16k.resx">
       <DependentUpon>Code16k.cs</DependentUpon>
     </EmbeddedResource>

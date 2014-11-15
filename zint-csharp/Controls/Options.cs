@@ -75,6 +75,9 @@ namespace ZintWrapper.Symbologies
                 case BarcodeTypes.MICROQR:
                     symbologyOptions = new MicroQR(symbology);
                     break;
+                case BarcodeTypes.MSI_PLESSEY:
+                    symbologyOptions = new MSIPlessey(symbology);
+                    break;
                 case BarcodeTypes.PDF417:
                     symbologyOptions = new PDF417(symbology);
                     break;
