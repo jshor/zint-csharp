@@ -145,7 +145,13 @@
     <Compile Include="Controls\Options.Designer.cs">
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
-    <Compile Include="Symbologies\PDF417.cs" />
+    <Compile Include="Symbologies\PDF417.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Symbologies\PDF417.Designer.cs">
+      <DependentUpon>PDF417.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Symbologies\PDF417Old.cs" />
     <Compile Include="Symbologies\QRCode.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\MicroQR.resx">
       <DependentUpon>MicroQR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbologies\PDF417.resx">
+      <DependentUpon>PDF417.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Symbologies\QRCode.resx">
       <DependentUpon>QRCode.cs</DependentUpon>

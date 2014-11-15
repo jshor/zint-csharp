@@ -57,12 +57,12 @@ namespace ZintWrapper
             BarcodeTypes[] symbologyValuesList = new BarcodeTypes[] {
                 BarcodeTypes.AZTEC, BarcodeTypes.AZRUNE, BarcodeTypes.CHANNEL, BarcodeTypes.CODABAR, BarcodeTypes.CODE128, BarcodeTypes.CODE16K, BarcodeTypes.CODE39,
                 BarcodeTypes.EXCODE39, BarcodeTypes.CODE49, BarcodeTypes.CODEONE, BarcodeTypes.DATAMATRIX, BarcodeTypes.EANX, BarcodeTypes.GRIDMATRIX, BarcodeTypes.MAXICODE,
-                BarcodeTypes.MICROPDF417,  BarcodeTypes.MICROQR, BarcodeTypes.QRCODE
+                BarcodeTypes.MICROPDF417,  BarcodeTypes.MICROQR, BarcodeTypes.PDF417, BarcodeTypes.QRCODE
             };
 
             String[] symbologyList = new String[] { "Aztec Code (ISO 24778)", "Aztec Runes", "Channel Code", "Codabar", "Code 128 (ISO 15417)", "Code 16k", "Code 39 (ISO 16388)",
                 "Code 39 Extended", "Code 49", "Code One", "Data Matrix (ISO 16022)", "European Article Number (EAN)", "Grid Matrix", "Maxicode (ISO 16023)",
-                "MicroPDF (ISO 24728)", "Micro QR Code", "QR Code (ISO 18004)" };
+                "MicroPDF (ISO 24728)", "Micro QR Code", "PDF417 (ISO 15438)", "QR Code (ISO 18004)" };
 
             barcodeList.PopulateOptions(symbologyValuesList, symbologyList);
         }
