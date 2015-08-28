@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class Code16k
     {

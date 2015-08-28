@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class PDF417
     {
@@ -35,8 +35,8 @@
             this.truncatedMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.option1 = new ZintWrapper.Symbologies.OptionBox();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option1 = new zintcsharp.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
             this.sizeGroupBox.SuspendLayout();
             this.encodingGroupBox.SuspendLayout();
             this.SuspendLayout();

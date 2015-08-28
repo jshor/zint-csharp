@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class ChannelCode
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.channelLabel = new System.Windows.Forms.Label();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
             this.SuspendLayout();
             // 
             // channelLabel

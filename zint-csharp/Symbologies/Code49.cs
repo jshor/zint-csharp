@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ZintWrapper.Symbologies
+namespace zintcsharp.Symbologies
 {
     public partial class Code49 : UserControl, IBarcode
     {

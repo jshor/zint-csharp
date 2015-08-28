@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class QRCode
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
-            this.option1 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
+            this.option1 = new zintcsharp.Symbologies.OptionBox();
             this.option2Selected = new System.Windows.Forms.RadioButton();
             this.autoResize = new System.Windows.Forms.RadioButton();
             this.option1Selected = new System.Windows.Forms.RadioButton();

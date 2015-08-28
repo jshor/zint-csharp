@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper
+﻿namespace zintcsharp
 {
     partial class MainForm
     {
@@ -31,8 +31,8 @@
             this.symbologyImage = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.barcodeList = new ZintWrapper.Symbologies.OptionBox();
-            this.options1 = new ZintWrapper.Symbologies.Options();
+            this.barcodeList = new zintcsharp.Symbologies.OptionBox();
+            this.options1 = new zintcsharp.Symbologies.Options();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.symbologyImage)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -65,7 +65,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
+            this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // barcodeList
@@ -82,7 +82,7 @@
             // 
             this.options1.Location = new System.Drawing.Point(299, 6);
             this.options1.Name = "options1";
-            this.options1.Size = new System.Drawing.Size(450, 273);
+            this.options1.Size = new System.Drawing.Size(434, 273);
             this.options1.TabIndex = 8;
             this.options1.OptionsChanged += new System.EventHandler(this.options_OptionsChanged);
             // 
@@ -92,7 +92,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
-            this.button3.Text = "button3";
+            this.button3.Text = "About";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // MainForm

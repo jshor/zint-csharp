@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class DataMatrix
     {
@@ -32,7 +32,7 @@
             this.rectangleSupression = new System.Windows.Forms.CheckBox();
             this.gs1DataMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
             this.sizeLabel = new System.Windows.Forms.Label();
             this.ecc200GroupBox.SuspendLayout();
             this.SuspendLayout();

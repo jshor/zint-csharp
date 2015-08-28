@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class CodeOne
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.encodingOptions = new System.Windows.Forms.GroupBox();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
             this.encodingMode = new System.Windows.Forms.Label();
             this.symbolSizeLabel = new System.Windows.Forms.Label();
             this.gs1DataMode = new System.Windows.Forms.RadioButton();

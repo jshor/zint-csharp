@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class MicroPDF
     {
@@ -32,7 +32,7 @@
             this.stdRadio = new System.Windows.Forms.RadioButton();
             this.hibcRadio = new System.Windows.Forms.RadioButton();
             this.encodingModeGroup = new System.Windows.Forms.GroupBox();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
             this.encodingModeGroup.SuspendLayout();
             this.SuspendLayout();
             // 

@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class Aztec
     {
@@ -36,8 +36,8 @@
             this.gs1DataMode = new System.Windows.Forms.RadioButton();
             this.standardMode = new System.Windows.Forms.RadioButton();
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.option2 = new ZintWrapper.Symbologies.OptionBox();
-            this.option1 = new ZintWrapper.Symbologies.OptionBox();
+            this.option2 = new zintcsharp.Symbologies.OptionBox();
+            this.option1 = new zintcsharp.Symbologies.OptionBox();
             this.encodingGroupBox.SuspendLayout();
             this.sizeGroupBox.SuspendLayout();
             this.SuspendLayout();
