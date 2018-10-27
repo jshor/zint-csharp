@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class Options
     {
@@ -86,7 +86,7 @@
             this.dataTab.Padding = new System.Windows.Forms.Padding(3);
             this.dataTab.Size = new System.Drawing.Size(427, 241);
             this.dataTab.TabIndex = 1;
-            this.dataTab.Text = "tabPage1";
+            this.dataTab.Text = "General";
             this.dataTab.UseVisualStyleBackColor = true;
             // 
             // add2DComponentGroup
@@ -196,7 +196,7 @@
             this.appearanceTab.Padding = new System.Windows.Forms.Padding(3);
             this.appearanceTab.Size = new System.Drawing.Size(423, 241);
             this.appearanceTab.TabIndex = 0;
-            this.appearanceTab.Text = "appearanceTab";
+            this.appearanceTab.Text = "Appearance";
             this.appearanceTab.UseVisualStyleBackColor = true;
             // 
             // rotationLabel

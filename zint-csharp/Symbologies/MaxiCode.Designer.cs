@@ -1,4 +1,4 @@
-﻿namespace ZintWrapper.Symbologies
+﻿namespace zintcsharp.Symbologies
 {
     partial class MaxiCode
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.option1 = new ZintWrapper.Symbologies.OptionBox();
+            this.option1 = new zintcsharp.Symbologies.OptionBox();
             this.option1Label = new System.Windows.Forms.Label();
             this.primaryTextLabel = new System.Windows.Forms.Label();
             this.primaryText = new System.Windows.Forms.TextBox();

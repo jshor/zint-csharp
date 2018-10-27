@@ -9,7 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Drawing.Drawing2D;
 
-namespace ZintWrapper
+namespace zintcsharp
 {
     class ZBarcode
     {

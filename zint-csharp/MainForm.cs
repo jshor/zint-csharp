@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.MemoryMappedFiles;
 
-namespace ZintWrapper
+namespace zintcsharp
 {
     public partial class MainForm : Form
     {

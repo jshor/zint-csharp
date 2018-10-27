@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 
-namespace ZintWrapper
+namespace zintcsharp
 {
     public class Symbology
     {
